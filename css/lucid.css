@@ -4,14 +4,15 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-  overflow-x: hidden;
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url(../img/web-bg.jpg) top left repeat;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  color: #aaa;
 }
 .text-muted {
   color: #777777;
 }
 .text-primary {
-  color: #fed136;
+  color: #6559af;
 }
 p {
   font-size: 14px;
@@ -28,13 +29,13 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  color: #6559af;
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fec503;
+  color: #685CB1;
 }
 h1,
 h2,
@@ -57,8 +58,8 @@ h6 {
 }
 .btn-primary {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #6559af;
+  border-color: #6559af;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -69,8 +70,8 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #685CB1;
+  border-color: #685CB1;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -92,23 +93,23 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #6559af;
+  border-color: #6559af;
 }
 .btn-primary .badge {
-  color: #fed136;
+  color: #6559af;
   background-color: white;
 }
 .btn-xl {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #6559af;
+  border-color: #6559af;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 3px;
+  border-radius: 0;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 15px 20px;
 }
 .btn-xl:hover,
 .btn-xl:focus,
@@ -116,8 +117,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #685CB1;
+  border-color: #685CB1;
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -139,11 +140,11 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #6559af;
+  border-color: #6559af;
 }
 .btn-xl .badge {
-  color: #fed136;
+  color: #6559af;
   background-color: white;
 }
 .navbar-custom {
@@ -151,21 +152,21 @@ fieldset[disabled] .btn-xl.active {
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #fed136;
+  color: #6559af;
   font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #fec503;
+  color: #685CB1;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-custom .navbar-toggle {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #6559af;
+  border-color: #6559af;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: white;
@@ -173,7 +174,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #fed136;
+  background-color: #6559af;
 }
 .navbar-custom .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -184,18 +185,18 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #fed136;
+  color: #6559af;
   outline: none;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
-  background-color: #fed136;
+  background-color: #6559af;
 }
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: white;
-  background-color: #fec503;
+  background-color: #685CB1;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -213,7 +214,7 @@ fieldset[disabled] .btn-xl.active {
     transition: all 0.3s;
   }
   .navbar-custom .navbar-nav > .active > a {
-    border-radius: 3px;
+    border-radius: 0;
   }
 }
 @media (min-width: 768px) {
@@ -237,6 +238,9 @@ header {
   text-align: center;
   color: white;
 }
+.intro-text i{
+  display: block;
+}
 header .intro-text {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -252,7 +256,7 @@ header .intro-text .intro-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 43px;
   line-height: 50px;
   margin-bottom: 25px;
 }
@@ -421,7 +425,7 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #fed136;
+  background-color: #6559af;
   color: white;
   border-radius: 100%;
   border: 7px solid #f1f1f1;
@@ -576,7 +580,7 @@ section#contact .form-group textarea.form-control {
   height: 236px;
 }
 section#contact .form-control:focus {
-  border-color: #fed136;
+  border-color: #6559af;
   box-shadow: none;
 }
 section#contact ::-webkit-input-placeholder {
@@ -645,7 +649,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-  background-color: #fed136;
+  background-color: #6559af;
 }
 .btn:focus,
 .btn:active,
@@ -729,11 +733,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
   text-shadow: none;
-  background: #fed136;
+  background: #6559af;
 }
 ::selection {
   text-shadow: none;
-  background: #fed136;
+  background: #6559af;
 }
 img::selection {
   background: transparent;
@@ -742,5 +746,5 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #fed136;
+  webkit-tap-highlight-color: #6559af;
 }
