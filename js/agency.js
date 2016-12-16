@@ -19,15 +19,20 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){ 
+    $('.navbar-collapse ul li a').click(function(){
             $('.navbar-toggle:visible').click();
     });
 
     // Offset for Main Navigation
     $('#mainNav').affix({
         offset: {
-            top: 100
+            top: 150
         }
     })
+
+    // Add class to intro cards
+    $('.row .col-md-4').hover(function(){
+      $(this).find('span').toggleClass('active');
+    });
 
 })(jQuery); // End of use strict
