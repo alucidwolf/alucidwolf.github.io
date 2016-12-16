@@ -8,7 +8,7 @@ body {
   color: #aaa;
 }
 .text-muted {
-  color: #777777;
+  color: #ccc;
 }
 .text-primary {
   color: #C6FC33;
@@ -59,8 +59,9 @@ h6 {
 }
 .btn-primary {
   color: white;
-  background-color: #C6FC33;
-  border-color: #C6FC33;
+  background-color: #9E3DED;
+  border-radius: 0;
+  border-color: transparent;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -147,32 +148,38 @@ fieldset[disabled] .btn-xl.active {
   color: #C6FC33;
   background-color: white;
 }
+.modal-body a{
+  color: #9E3DED;
+}
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #9E3DED;
+  color: #C6FC33;
+  padding: 17px 15px 0 15px;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #C6FC33;
+  color: #9E3DED;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-custom .navbar-toggle {
-  background-color: #C6FC33;
-  border-color: #C6FC33;
+  background-color: transparent;
+  border-radius: 0;
+  border: 2px solid #C6FC33;;
   text-transform: uppercase;
   color: white;
   font-size: 12px;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #C6FC33;
+  border: 2px solid #9E3DED;
+  background-color: transparent;
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -289,7 +296,7 @@ section {
   padding: 50px 0;
 }
 section#services .col-md-4{
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 section h2.section-heading {
   font-size: 40px;
@@ -301,7 +308,7 @@ section h3.section-subheading {
   text-transform: none;
   font-style: italic;
   font-weight: 400;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
 }
 @media (min-width: 768px) {
   section {
@@ -430,16 +437,16 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #C6FC33;
+  background-color: #222;
   color: white;
   border-radius: 100%;
-  border: 7px solid #f1f1f1;
+  border: 4px solid #C6FC33;
   text-align: center;
 }
 .timeline > li .timeline-image h4 {
   font-size: 10px;
-  margin-top: 12px;
-  line-height: 14px;
+  margin-top: 15px;
+  line-height: 15px;
 }
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
@@ -643,7 +650,7 @@ ul.social-buttons li a {
   height: 40px;
   width: 40px;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 36px;
   color: white;
   outline: none;
   border: 2px solid #C6FC33;

@@ -19,9 +19,16 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){
-            $('.navbar-toggle:visible').click();
+    $('.navbar-collapse ul li a').click(function() {
+        $('.navbar-toggle:visible').click();
     });
+    $('a.navbar-brand').click(function() {
+        if ($('.navbar-toggle').hasClass('collapsed')) {
+            //do nothing
+        } else {
+            $('.navbar-toggle:visible').click();
+        }
+    })
 
     // Offset for Main Navigation
     $('#mainNav').affix({
@@ -31,8 +38,8 @@
     })
 
     // Add class to intro cards
-    $('.row .col-md-4').hover(function(){
-      $(this).find('span').toggleClass('active');
+    $('.row .col-md-4').hover(function() {
+        $(this).find('span').toggleClass('active');
     });
 
 })(jQuery); // End of use strict
