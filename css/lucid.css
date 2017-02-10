@@ -690,6 +690,9 @@ ul.social-buttons li a:active {
   margin-bottom: 15px;
   font-size: 3em;
 }
+h2.email{
+  text-transform: lowercase;
+}
 .portfolio-modal .modal-content p {
   margin-bottom: 30px;
 }
