@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Async Playground</title>
+</head>
+
+<body>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select type="text" class="form-control" id="country" placeholder="Select Country">
+
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="state">State</label>
+    <select type="text" class="form-control" id="state" placeholder="Select State">
+
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <select type="text" class="form-control" id="city" placeholder="Select City">
+
+    </select>
+  </div>
+  <select id="test" type="text" value="Select me!">
+    <option value="asd">asd</option>
+    <option value="dsa">dsa</option>
+  </select>
+  <script>
+    var elem = document.getElementById('test');
+    elem.addEventListener('select', function () {
+      alert('Selection changed!');
+    }, false);
+  </script>
+
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+
+<!-- <script src="async-scripts.js"></script> -->
+<script src="cascading-select-location.js"></script>
+
+</html>
