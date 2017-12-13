@@ -16,44 +16,21 @@
   countryDDM.append('<option selected="true" disabled>Choose Country</option>');
   countryDDM.prop("selectedIndex", 0);
 
-  const makeRequest = async () => {
-    const data = await getJSON();
-    const moreData = await makeAnotherRequest();
-  };
+  async function getData(url) {
+    try {
+      // start async function to get file and await for it to be successfull then return that result
+      console.log("start");
+      $("#city").css("background", "#f90");
 
-  function getJSON() {
-    $.getJSON(countryURL, data => {
-      $.each(data, (key, entry) => {
-        countryDDM.append(
-          $("<option></option>")
-            .attr("value", entry.code)
-            .text(entry.name)
-        );
-      });
-      return data;
-    });
+      const dataset = await $.getJSON(url);
+      return dataset;
+    } catch (error) {
+      console.error("Error: " + error);
+    }
   }
 
-  function makeAnotherRequest() {
-    $.getJSON(statesURL, data => {
-      $.each(data, (key, entry) => {
-        statesDDM.append(
-          $("<option></option>")
-            .attr("value", entry.state)
-            .text(entry.name)
-        );
-      });
-      return data;
-    });
-  }
-
-  //makeRequest();
-
-  //
-
-  //getData("https://api.icndb.com/jokes/random");
-  //getData(bigCityURL);
   getData(bigCityURL)
+    // wait for json to be returned
     .then(result => {
       let newResult = [];
       $.each(result, (key, entry) => {
@@ -62,8 +39,12 @@
           count++;
         }
       });
+      newResult.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
       return newResult;
     })
+    // wait for filtered result
     .then(result => {
       console.log(result);
       $.each(result, (key, entry) => {
@@ -73,34 +54,13 @@
             .text(entry.name)
         );
       });
-      $("#city").css("background", "#fff");
+      // returning color back to normal and loggin time diff
       if (result[0].name != 0) {
         timeNow2 = Date.now();
+        $("#city").css("background", "#fff");
         console.log(
           "time: " + (timeNow2 - timeNow) + ", Number of items: " + count
         );
       }
     });
-
-  async function getData(url) {
-    console.log("start");
-    $("#city").css("background", "#f90");
-    const dataset = await $.getJSON(url);
-    //console.log(dataset);
-    // document.querySelector(".joke").innerHTML = dataset.value.joke;
-    //document.querySelector(".joke").innerHTML = dataset[1].name;
-    // $.each(dataset, (key, entry) => {
-    //   if (entry.country === "CN") {
-    //     citiesDDM.append(
-    //       $("<option></option>")
-    //         .attr("value", entry.country)
-    //         .text(entry.name)
-    //     );
-    //     count++;
-    //   }
-    // });
-    return dataset;
-    // if (dataset.type === "success") {
-    // }
-  }
 })();
