@@ -1,6 +1,6 @@
 "use strict";
 
-(function () {
+(function() {
   var timeNow = Date.now();
   var timeNow2;
   var count = 0;
@@ -14,7 +14,7 @@
   var citiesCAURL =
     "https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/canada-cities.json";
   var citiesUSAURL =
-    "https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/cities.json"
+    "https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/cities.json";
   var bigCityURL =
     "https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/global-cities.json";
   countryDDM.append('<option selected="true" disabled>Choose Country</option>');
@@ -43,7 +43,7 @@
         if (entry.code === "US") {
           fsData.push(entry);
         }
-      })
+      });
       return fsData;
     } else if (data[0].country === "US") {
       let fsData = [];
@@ -51,7 +51,16 @@
         if (entry.country === "US") {
           fsData.push(entry);
         }
-      })
+      });
+      return fsData;
+    } else if (data[0].name === "New York") {
+      let fsData = [];
+      $.each(data, (key, entry) => {
+        if (entry.state === "AL") {
+          fsData.push(entry.name);
+        }
+      });
+      fsData.sort();
       return fsData;
     } else {
       // if json is states data, testing only
@@ -63,7 +72,7 @@
       });
       fsData.sort((a, b) => {
         return a.name.localeCompare(b.name);
-      })
+      });
       return fsData;
     }
   }
@@ -73,16 +82,29 @@
     if (modifiedData[0].country === "US") {
       $.each(modifiedData, (key, entry) => {
         count++;
-        statesDDM.append($("<option></option>")
-          .attr("value", entry.short)
-          .text(entry.name))
+        statesDDM.append(
+          $("<option></option>")
+            .attr("value", entry.short)
+            .text(entry.name)
+        );
       });
+    } else if (modifiedData[0] == "Auburn") {
+      console.log(modifiedData[0]);
+      for (let i = 0; i < modifiedData.length; i++) {
+        citiesDDM.append(
+          $("<option></option>")
+            .attr("value", modifiedData[i])
+            .text(modifiedData[i])
+        );
+      }
     } else {
       $.each(modifiedData, (key, entry) => {
         count++;
-        countryDDM.append($("<option></option>")
-          .attr("value", entry.code)
-          .text(entry.name))
+        countryDDM.append(
+          $("<option></option>")
+            .attr("value", entry.code)
+            .text(entry.name)
+        );
       });
     }
     // returning color back to normal and loggin time diff
@@ -101,12 +123,16 @@
     // wait for filtered result
     .then(placeFSData);
 
-  countryDDM.on("change", function () {
+  countryDDM.on("change", function() {
     let chosenCountry = $(this).val();
     if (chosenCountry === "US") {
       getData(statesProvincesURL)
         .then(filterSort)
         .then(placeFSData);
+
+      getData(citiesUSAURL)
+        .then(filterSort)
+        .then(placeFSData);
     }
-  })
+  });
 })();
