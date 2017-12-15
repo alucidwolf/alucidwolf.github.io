@@ -16,7 +16,7 @@ let bigCityURL =
 let DDMStates = document.getElementById("states");
 let $DDMStates = $("#states");
 let $DDMCities = $("#cities");
-
+let countme = 0
 function output(text) {
   console.log(text);
 }
@@ -47,7 +47,8 @@ function getFile(file) {
     };
     console.log("request sent succesfully");
   });
-
+countme++
+console.log(countme);
   return promiseObj;
 }
 
