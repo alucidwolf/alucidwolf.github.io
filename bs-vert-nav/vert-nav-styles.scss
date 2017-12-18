@@ -1,11 +1,30 @@
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 50px;
+  min-height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
 .verticalClass {
   .navbar {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
     border: 0;
     border-radius: 0;
-    margin-right: 25px;
     width: 200px;
+    height: calc(100% - 20px);
     transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001;
     .container-fluid {
       padding: 0;
       margin: 0;
@@ -43,18 +62,31 @@
       margin: 0;
       .navbar-toggle {
         display: block;
-        margin-right: 8px;
         border-radius: 0;
+        border: 0;
+        position: absolute;
+        top: 0;
+        left: 210px;
       }
     }
   }
-  &.nav-open {
+  &.nav-closed {
     .navbar {
-      margin-left: -142px;
+      margin-left: -200px;
+    }
+    .tab-content {
+      margin-left: 0;
     }
   }
   .tab-content {
-    float: left;
-    width: calc(100% - 225px);
   }
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f8f8f8;
+  text-align: center;
 }
