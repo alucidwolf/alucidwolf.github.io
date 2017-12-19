@@ -5,26 +5,57 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   min-height: 100%;
 }
 
 .wrapper {
+  max-width: 1024px;
   margin: 0 auto;
+}
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.is-flex > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+.row.is-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  > [class*="col-"] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 .verticalClass {
-  position: fixed;
   .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
     border: 0;
     border-radius: 0;
     width: 200px;
     transition: all 0.5s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 1001;
+    float: left;
+    margin-bottom: 0;
     .container-fluid {
       padding: 0;
       margin: 0;
@@ -41,7 +72,7 @@ body {
       .navbar-nav {
         width: 100%;
         margin: 0;
-        height: calc(100vh - 50px);
+        height: 100vh;
         overflow-y: auto;
         li {
           width: 100%;
@@ -63,7 +94,6 @@ body {
       width: 100%;
       margin: 0;
       .navbar-toggle {
-        display: block;
         border-radius: 0;
         border: 0;
         position: absolute;
@@ -73,15 +103,23 @@ body {
     }
   }
   &.nav-closed {
-    position: relative;
     .navbar {
-      margin-left: -200px;
     }
     .tab-content {
       margin-left: 0;
     }
   }
   .tab-content {
+    max-width: 794px;
+    float: left;
+    .is-table-row {
+      display: table;
+      [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+      }
+    }
     .tab-pane {
       .container-max-width {
         max-width: 1024px;
@@ -103,4 +141,9 @@ body {
 @media all and (max-width: 1023px) {
 }
 @media all and (min-width: 1024px) {
+  .verticalClass {
+    .navbar-toggle {
+      display: none;
+    }
+  }
 }

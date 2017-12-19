@@ -5,28 +5,59 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   min-height: 100%;
 }
 
 .wrapper {
+  max-width: 1024px;
   margin: 0 auto;
 }
 
-.verticalClass {
-  position: fixed;
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row.is-flex > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+.row.is-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row.is-flex > [class*="col-"] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .verticalClass .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
   border: 0;
   border-radius: 0;
   width: 200px;
   transition: all 0.5s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1001;
+  float: left;
+  margin-bottom: 0;
 }
 
 .verticalClass .navbar .container-fluid {
@@ -50,7 +81,7 @@ body {
 .verticalClass .navbar .container-fluid .navbar-nav {
   width: 100%;
   margin: 0;
-  height: calc(100vh - 50px);
+  height: 100vh;
   overflow-y: auto;
 }
 
@@ -77,7 +108,6 @@ body {
 }
 
 .verticalClass .navbar .navbar-header .navbar-toggle {
-  display: block;
   border-radius: 0;
   border: 0;
   position: absolute;
@@ -85,16 +115,23 @@ body {
   left: 210px;
 }
 
-.verticalClass.nav-closed {
-  position: relative;
-}
-
-.verticalClass.nav-closed .navbar {
-  margin-left: -200px;
-}
-
 .verticalClass.nav-closed .tab-content {
   margin-left: 0;
+}
+
+.verticalClass .tab-content {
+  max-width: 794px;
+  float: left;
+}
+
+.verticalClass .tab-content .is-table-row {
+  display: table;
+}
+
+.verticalClass .tab-content .is-table-row [class*="col-"] {
+  float: none;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .verticalClass .tab-content .tab-pane .container-max-width {
@@ -109,4 +146,10 @@ body {
   left: 0;
   background-color: #f8f8f8;
   text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+  .verticalClass .navbar-toggle {
+    display: none;
+  }
 }
