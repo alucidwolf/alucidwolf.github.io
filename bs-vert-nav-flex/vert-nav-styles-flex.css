@@ -1,54 +1,79 @@
-.dw-pnl {
-  margin: 0;
-  padding: 5px;
+.template-01 .navbar {
+  border-radius: 0;
 }
 
-.dw-clstr {
+.template-01 .navbar .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.template-01 .navbar .container-fluid .navbar-collapse {
+  padding: 0;
+  margin: 0;
+}
+
+.template-01 .navbar .container-fluid .navbar-nav {
+  width: 100%;
+  margin: 0;
+}
+
+.template-01 .navbar .container-fluid .navbar-nav li {
+  width: 100%;
+}
+
+.template-01 .navbar .container-fluid .navbar-nav li a {
+  padding: 15px;
+}
+
+.template-01 .dw-pnl {
+  margin: 0;
+}
+
+.template-01 .dw-clstr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0;
 }
 
-.dw-clstr__sgmnt {
+.template-01 .dw-clstr__sgmnt {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+  padding: 0;
 }
 
-.dw-clstr__sgmnt--clmn {
+.template-01 .dw-clstr__sgmnt--clmn {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
-.dw-pnl__cntnt {
-  border-radius: 10px;
+.template-01 .dw-pnl__cntnt {
   overflow: hidden;
-  padding: 20px;
   width: 100%;
 }
 
-.dw-clstr__sgmnt--rw {
+.template-01 .dw-clstr__sgmnt--rw {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.bd--white {
-  border: 4px solid #333;
+.template-01 .bd--white {
+  border: 1px solid red;
 }
 
-.tx--white {
-  color: #f90;
+.template-01 .tx--white {
+  color: #000;
 }
 
 @media (max-width: 767px) {
-  .dw-clstr__sgmnt--rw {
+  .template-01 .dw-clstr__sgmnt--rw {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -57,14 +82,14 @@
 }
 
 @media (min-width: 768px) {
-  .dw-pnl {
+  .template-01 .dw-pnl {
     -webkit-column-break-inside: avoid;
     break-inside: avoid;
   }
 }
 
 @media (max-width: 767px) {
-  .dw-clstr--vrt {
+  .template-01 .dw-clstr--vrt {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;

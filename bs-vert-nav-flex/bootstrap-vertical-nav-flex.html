@@ -8,45 +8,117 @@
   <title>Bootstrap Vertical Nav</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="" id="theme-stylesheet">
   <link rel="stylesheet" href="vert-nav-styles-flex.css">
 </head>
 
-<body>
+<body class="template-01">
   <div class="dw-pnl dw-clstr dw-clstr--vrt">
-    <div class="dw-clstr__sgmnt dw-clstr__sgmnt--clmn ">
+    <div class="dw-clstr__sgmnt dw-clstr__sgmnt--clmn col-sm-3">
       <div class="dw-pnl dw-clstr__sgmnt ">
         <div class="dw-pnl__cntnt bd--white tx--white">
-          <h2>Navigation</h2>
+          <img src="https://avatars1.githubusercontent.com/u/563139?v=4" alt="">
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#horz-nav" aria-expanded="false">
+                  <span class="sr-only">
+                    Toggle navigation
+                  </span>
+                  <span class="icon-bar">
+                  </span>
+                  <span class="icon-bar">
+                  </span>
+                  <span class="icon-bar">
+                  </span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse" id="horz-nav">
+                <ul class="nav navbar-nav">
+                  <li class="active">
+                    <a href="#tab1" data-toggle="tab" aria-expanded="true">Home</a>
+                  </li>
+                  <li>
+                    <a href="#tab2" data-toggle="tab" aria-expanded="false">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
-    <div class="dw-clstr__sgmnt dw-clstr__sgmnt--clmn ">
-      <div class="dw-pnl dw-clstr__sgmnt ">
-        <div class="dw-pnl__cntnt bd--white tx--white">
-          <h2>Hero Image</h2>
+    <div class="tab-content dw-clstr__sgmnt dw-clstr__sgmnt--clmn col-sm-9">
+      <div role="tabpanel" class="flex tab-pane fade in active" id="tab1">
+        <div class="dw-pnl dw-clstr__sgmnt ">
+          <div class="dw-pnl__cntnt bd--white tx--white">
+            <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab1-header.jpg"
+              alt="">
+          </div>
         </div>
-      </div>
-      <div class="dw-pnl dw-clstr__sgmnt ">
-        <div class="dw-pnl__cntnt bd--white tx--white">
-          <!--  -->
-          <div class="dw-clstr__sgmnt dw-clstr__sgmnt--rw ">
-            <div class="dw-pnl dw-clstr__sgmnt ">
-              <div class="dw-pnl__cntnt bd--white tx--white">
-                <h2>content</h2>
+        <div class="dw-pnl dw-clstr__sgmnt ">
+          <div class="dw-pnl__cntnt bd--white tx--white">
+            <div class="dw-clstr__sgmnt dw-clstr__sgmnt--rw ">
+              <div class="dw-pnl dw-clstr__sgmnt col-sm-9">
+                <div class="dw-pnl__cntnt bd--white tx--white">
+                  <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
+                    ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
+                    ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
+                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="dw-pnl dw-clstr__sgmnt ">
-              <div class="dw-pnl__cntnt bd--white tx--white">
-                <h2>sidebar info</h2>
+              <div class="dw-pnl dw-clstr__sgmnt col-sm-3">
+                <div class="dw-pnl__cntnt bd--white tx--white">
+                  <h2>sidebar info</h2>
+                </div>
               </div>
             </div>
           </div>
-          <!--  -->
+        </div>
+      </div>
+      <div role="tabpanel" class="flex tab-pane fade" id="tab2">
+        <div class="dw-pnl dw-clstr__sgmnt ">
+          <div class="dw-pnl__cntnt bd--white tx--white">
+            <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab2-header.jpg"
+              alt="">
+          </div>
+        </div>
+        <div class="dw-pnl dw-clstr__sgmnt ">
+          <div class="dw-pnl__cntnt bd--white tx--white">
+            <div class="dw-clstr__sgmnt dw-clstr__sgmnt--rw ">
+              <div class="dw-pnl dw-clstr__sgmnt col-sm-9">
+                <div class="dw-pnl__cntnt bd--white tx--white">
+                  <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
+                    ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
+                    ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
+                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
+                  </p>
+                  <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
+                    ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
+                    ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
+                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
+                  </p>
+                  <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
+                    ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
+                    ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
+                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
+                  </p>
+                </div>
+              </div>
+              <div class="dw-pnl dw-clstr__sgmnt col-sm-3">
+                <div class="dw-pnl__cntnt bd--white tx--white">
+                  <h2>sidebar info</h2>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
