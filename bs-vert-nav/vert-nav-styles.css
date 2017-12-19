@@ -51,7 +51,7 @@ body {
   width: 100%;
   margin: 0;
   height: calc(100vh - 50px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .verticalClass .navbar .container-fluid .navbar-nav li {

@@ -42,7 +42,7 @@ body {
         width: 100%;
         margin: 0;
         height: calc(100vh - 50px);
-        overflow-y: scroll;
+        overflow-y: auto;
         li {
           width: 100%;
           a {
@@ -82,6 +82,8 @@ body {
     }
   }
   .tab-content {
+    .tab-pane {
+    }
   }
 }
 

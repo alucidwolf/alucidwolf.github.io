@@ -107,26 +107,6 @@
       console.log("navbar-toggle clicked");
       $(".verticalClass").toggleClass("nav-closed");
     });
-
-    var resizeWindowtimer;
-
-    $(window).on("resize", function (e) {
-      clearTimeout(resizeWindowtimer);
-      resizeWindowtimer = setTimeout(function () {
-        var wWidth = $(window).outerWidth();
-        if ($(".verticalClass").hasClass("nav-closed")) {
-          if (wWidth >= 768) {
-            $(".verticalClass").removeClass("nav-closed");
-          }
-        } else {
-          if (wWidth < 768) {
-            $(".verticalClass").addClass("nav-closed");
-          } else {
-            $(".verticalClass").removeClass("nav-closed");
-          }
-        }
-      }, 250);
-    })
   </script>
 </body>
 
