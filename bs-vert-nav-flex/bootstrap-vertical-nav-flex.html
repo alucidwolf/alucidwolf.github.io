@@ -8,6 +8,8 @@
   <title>Bootstrap Vertical Nav w/ Flex</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="vert-nav-styles-flex.css">
 </head>
 
@@ -16,6 +18,7 @@
     <div class="flex-cluster-segment flex-cluster-segment--col flex-panel--nav col-sm-3 col-md-2">
       <div class="flex-panel flex-cluster-segment ">
         <div class="flex-panel--content bd-red">
+          <!-- START: this is where user will be able to edit the NAVIGATION component to add more tabs or edit names -->
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header ">
@@ -31,7 +34,9 @@
                   </span>
                 </button>
                 <a href="/" class="navbar-brand">
+                  <!-- START: this is where user will be able to edit the brand IMAGE to represent their company or event logo, inside or outside of the NAVIGATION component -->
                   <img src="https://www.cendyn.com/getmedia/aac111b5-b3ef-4e72-82f6-d73e8eeeb573/CendynLogo_white/" alt="">
+                  <!-- START: this is where user will be able to edit the brand IMAGE to represent their company or event logo, inside or outside of the NAVIGATION component -->
                 </a>
               </div>
               <div class="collapse navbar-collapse" id="horz-nav">
@@ -43,12 +48,16 @@
                     <a href="#tab2" data-toggle="tab" aria-expanded="false">About</a>
                   </li>
                   <li>
-                    <a href="#tab2" data-toggle="tab" aria-expanded="false" class="btn btn-primary">Register</a>
+                    <a href="#tab3" data-toggle="tab" aria-expanded="false">Schedule</a>
+                  </li>
+                  <li>
+                    <a href="#tab6" data-toggle="tab" aria-expanded="false" class="btn btn-primary">Register</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
+          <!-- END: this is where user will be able to edit the NAVIGATION component to add more tabs or edit names -->
         </div>
       </div>
     </div>
@@ -90,15 +99,19 @@
       <div role="tabpanel" class="flex tab-pane fade" id="tab2">
         <div class="flex-panel flex-cluster-segment ">
           <div class="flex-panel--content bd-red">
+            <!-- START: this is where user will be able to edit the header IMAGE for the active tab -->
             <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab2-header.jpg"
               alt="">
+            <!-- END: this is where user will be able to edit the header IMAGE for the active tab -->
           </div>
         </div>
         <div class="flex-panel flex-cluster-segment ">
           <div class="flex-panel--content">
             <div class="flex-cluster-segment flex-cluster-segment--row ">
-              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9 col-md-10">
+              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9">
                 <div class="flex-panel--content bd-red">
+                  <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                  <h1>About</h1>
                   <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
                     ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
                     ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
@@ -109,16 +122,220 @@
                     ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
                     jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
                   </p>
-                  <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
-                    ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
-                    ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
-                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
-                  </p>
+                  <!-- END: this is where user will be able to edit the CONTENT component to add text -->
                 </div>
               </div>
-              <div class="flex-panel flex-cluster-segment col-sm-3 col-md-2">
+              <div class="flex-panel flex-cluster-segment flex-panel--side col-sm-3">
                 <div class="flex-panel--content bd-red">
-                  <h2>sidebar info</h2>
+                  <div class="side-item date">
+                    <span class="fa fa-calendar"></span>
+                    <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                    <p>25th Oct - 28th Oct 2017
+                      <br>9.00 AM to 5.30 PM</p>
+                    <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                  </div>
+                  <div class="side-item location">
+                    <span class="fa fa-map-marker"></span>
+                    <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                    <p>25th Oct - 28th Oct 2017
+                      <br>9.00 AM to 5.30 PM</p>
+                    <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                  </div>
+                  <div class="side-item attendees">
+                    <span class="fa fa-users"></span>
+                    <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                    <p>25th Oct - 28th Oct 2017
+                      <br>9.00 AM to 5.30 PM</p>
+                    <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="flex tab-pane fade" id="tab3">
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content bd-red">
+            <!-- START: this is where user will be able to edit the header IMAGE for the active tab -->
+            <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab1-header.jpg"
+              alt="">
+            <!-- END: this is where user will be able to edit the header IMAGE for the active tab -->
+          </div>
+        </div>
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content">
+            <div class="flex-cluster-segment flex-cluster-segment--row ">
+              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9">
+                <div class="flex-panel--content bd-red">
+                  <h1>Schedule</h1>
+                  <div id="tab-schedule" class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="day1">
+                      <div class="row main-item">
+                        <div class="col-md-4">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          9.00 AM - 11.00 AM
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                        <div class="col-md-8">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          9.00 AM - 11.00 AM
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                        <div class="col-md-8">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          9.00 AM - 11.00 AM
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                        <div class="col-md-8">
+                          <!-- START: this is where user can edit CONTENT component to change date/text -->
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                          <!-- END: this is where user can edit CONTENT component to change date/text -->
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="day2">
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump
+                            bacon kielbasa short ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille
+                            pig porchetta doner jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="day3">
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha
+                            pork spare ribs chicken ribeye. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball
+                            shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="day4">
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon rami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsucapicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig
+                            pastrami
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row main-item">
+                        <div class="col-md-4">9.00 PM - 11.00 PM</div>
+                        <div class="col-md-8">
+                          <p>Bacon ipsum dolwine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-panel flex-cluster-segment flex-panel--side col-sm-3">
+                <div class="flex-panel--content bd-red">
+                  <!-- START: this is where user will be able to click to ADD another DAY to the TAB LIST above which will create a new <li> in the nav as well as a new div.tab-pane within the div#tab-schedule -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                      <a href="#day1" aria-controls="home" role="tab" data-toggle="tab">
+                        <span class="schedule-day">1</span>DAY</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#day2" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="schedule-day">2</span>DAY</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#day3" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="schedule-day">3</span>DAY</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#day4" aria-controls="profile" role="tab" data-toggle="tab">
+                        <span class="schedule-day">4</span>DAY</a>
+                    </li>
+                  </ul>
+                  <!-- END: this is where user will be able to click to edit and ADD another DAY to the TAB LIST above which will create a new <li> in the nav as well as a new div.tab-pane within the div#tab-schedule -->
                 </div>
               </div>
             </div>

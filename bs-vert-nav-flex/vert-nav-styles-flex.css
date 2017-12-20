@@ -52,7 +52,7 @@
 }
 
 .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li.active a {
-  color: red;
+  color: #e72830;
   background-color: transparent;
 }
 
@@ -68,8 +68,33 @@
 }
 
 .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li .btn-primary:hover, .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li .btn-primary:active, .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li .btn-primary:focus {
-  border-color: red;
-  background-color: red;
+  border-color: #e72830;
+  background-color: #e72830;
+}
+
+.registration-vert-nav-flex .flex-panel--side .nav-tabs {
+  padding: 50px;
+  border-bottom: none;
+}
+
+.registration-vert-nav-flex .flex-panel--side .nav-tabs > li {
+  float: none;
+}
+
+.registration-vert-nav-flex .flex-panel--side .nav-tabs > li > a {
+  border-radius: 0;
+  text-align: center;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.registration-vert-nav-flex .flex-panel--side .nav-tabs > li > a .schedule-day {
+  display: block;
+  font-size: 40px;
+}
+
+.registration-vert-nav-flex .flex-panel--side .nav-tabs > li.active a {
+  color: #e72830;
 }
 
 .registration-vert-nav-flex .flex-panel {
@@ -85,7 +110,7 @@
   right: 0;
   bottom: 0;
   padding: 10px;
-  background-color: red;
+  background-color: #e72830;
   color: #fff;
 }
 
@@ -94,7 +119,31 @@
 }
 
 .registration-vert-nav-flex .flex-panel--main .flex-panel--content {
-  padding: 50px 20px 20px 50px;
+  padding: 50px;
+}
+
+.registration-vert-nav-flex .flex-panel--main .main-item {
+  border-bottom: 2px solid silver;
+  padding: 20px 0;
+}
+
+.registration-vert-nav-flex .flex-panel--main .main-item:last-child {
+  border-bottom: none;
+}
+
+.registration-vert-nav-flex .flex-panel--side .flex-panel--content {
+  background-color: #e72830;
+}
+
+.registration-vert-nav-flex .flex-panel--side .flex-panel--content .side-item {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.registration-vert-nav-flex .flex-panel--side .flex-panel--content .side-item span[class*="fa"] {
+  font-size: 40px;
+  padding-bottom: 10px;
 }
 
 .registration-vert-nav-flex .flex-panel--content {
@@ -133,7 +182,22 @@
 }
 
 .registration-vert-nav-flex .bd-red {
-  border: 1px solid red;
+  border: 1px solid #e72830;
+}
+
+.registration-vert-nav-flex .btn-primary {
+  border-radius: 0;
+  border: 1px solid #000;
+  background-color: transparent;
+  padding: 12px 35px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.registration-vert-nav-flex .btn-primary:hover, .registration-vert-nav-flex .btn-primary:active, .registration-vert-nav-flex .btn-primary:focus {
+  color: #fff;
+  border-color: #e72830;
+  background-color: #e72830;
 }
 
 @media (max-width: 767px) {
