@@ -61,6 +61,14 @@
   background-color: transparent;
 }
 
+.registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li.active a.btn-primary {
+  border-radius: 0;
+  border: 1px solid #e72830;
+  background-color: #e72830;
+  color: #fff;
+  padding: 7px 20px;
+}
+
 .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li:last-child {
   margin-top: 10px;
 }
@@ -95,13 +103,13 @@
   color: #fff;
 }
 
-.registration-vert-nav-flex .flex-panel--main .flex-panel--bgimage {
-  background-size: cover;
-  min-height: 400px;
+.registration-vert-nav-flex .flex-panel--main > .flex-panel--content {
+  padding: 50px;
+  min-height: 700px;
 }
 
-.registration-vert-nav-flex .flex-panel--main .flex-panel--content {
-  padding: 50px;
+.registration-vert-nav-flex .flex-panel--main .flex-panel--bgimage {
+  background-size: cover;
 }
 
 .registration-vert-nav-flex .flex-panel--main .main-item {
@@ -126,6 +134,24 @@
   background-color: #e72830;
   color: #fff;
   padding: 5px 10px;
+}
+
+.registration-vert-nav-flex .flex-panel--main .flex-panel--contact p {
+  display: table;
+  padding: 15px;
+  min-height: 70px;
+}
+
+.registration-vert-nav-flex .flex-panel--main .flex-panel--contact p span:first-child {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 15px;
+  font-size: 20px;
+}
+
+.registration-vert-nav-flex .flex-panel--main .flex-panel--contact.email span {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .registration-vert-nav-flex .flex-panel--side .nav-tabs {
@@ -231,7 +257,7 @@
   border-radius: 0;
   border: 1px solid #000;
   background-color: transparent;
-  padding: 12px 35px;
+  padding: 8px 35px;
   color: #000;
   text-transform: uppercase;
 }

@@ -51,6 +51,13 @@
               a {
                 color: $brand-primary;
                 background-color: transparent;
+                &.btn-primary {
+                  border-radius: 0;
+                  border: 1px solid $brand-primary;
+                  background-color: $brand-primary;
+                  color: #fff;
+                  padding: 7px 20px;
+                }
               }
             }
             &:last-child {
@@ -92,12 +99,12 @@
   }
 
   .flex-panel--main {
+    > .flex-panel--content {
+      padding: 50px;
+      min-height: 700px;
+    }
     .flex-panel--bgimage {
       background-size: cover;
-      min-height: 400px;
-    }
-    .flex-panel--content {
-      padding: 50px;
     }
     .main-item {
       border-bottom: 2px solid silver;
@@ -116,6 +123,25 @@
         background-color: $brand-primary;
         color: #fff;
         padding: 5px 10px;
+      }
+    }
+    .flex-panel--contact {
+      p {
+        display: table;
+        padding: 15px;
+        min-height: 70px;
+        span:first-child {
+          display: table-cell;
+          vertical-align: middle;
+          padding-right: 15px;
+          font-size: 20px;
+        }
+      }
+      &.email {
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
       }
     }
   }
@@ -217,7 +243,7 @@
     border-radius: 0;
     border: 1px solid $brand-dark-base;
     background-color: transparent;
-    padding: 12px 35px;
+    padding: 8px 35px;
     color: $brand-dark-base;
     text-transform: uppercase;
     &:hover,
