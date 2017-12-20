@@ -5,18 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Bootstrap Vertical Nav</title>
+  <title>Bootstrap Vertical Nav w/ Flex</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
   <link rel="stylesheet" href="vert-nav-styles-flex.css">
 </head>
 
-<body class="template-01">
-  <div class="dw-pnl dw-clstr dw-clstr--vrt">
-    <div class="dw-clstr__sgmnt dw-clstr__sgmnt--clmn col-sm-3">
-      <div class="dw-pnl dw-clstr__sgmnt ">
-        <div class="dw-pnl__cntnt bd--white tx--white">
-          <img src="https://avatars1.githubusercontent.com/u/563139?v=4" alt="">
+<body class="registration-vert-nav-flex">
+  <div class="flex-panel flex-cluster flex-cluster--vert">
+    <div class="flex-cluster-segment flex-cluster-segment--col flex-panel--nav col-sm-3 col-md-2">
+      <div class="flex-panel flex-cluster-segment ">
+        <div class="flex-panel--content bd-red">
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <div class="navbar-header ">
@@ -31,14 +30,20 @@
                   <span class="icon-bar">
                   </span>
                 </button>
+                <a href="/" class="navbar-brand">
+                  <img src="https://www.cendyn.com/getmedia/aac111b5-b3ef-4e72-82f6-d73e8eeeb573/CendynLogo_white/" alt="">
+                </a>
               </div>
               <div class="collapse navbar-collapse" id="horz-nav">
                 <ul class="nav navbar-nav">
                   <li class="active">
-                    <a href="#tab1" data-toggle="tab" aria-expanded="true">Home</a>
+                    <a href="#tab1" data-toggle="tab" aria-expanded="true">Welcome</a>
                   </li>
                   <li>
                     <a href="#tab2" data-toggle="tab" aria-expanded="false">About</a>
+                  </li>
+                  <li>
+                    <a href="#tab2" data-toggle="tab" aria-expanded="false" class="btn btn-primary">Register</a>
                   </li>
                 </ul>
               </div>
@@ -47,29 +52,35 @@
         </div>
       </div>
     </div>
-    <div class="tab-content dw-clstr__sgmnt dw-clstr__sgmnt--clmn col-sm-9">
+    <div class="tab-content flex-cluster-segment flex-cluster-segment--col col-sm-9 col-md-10">
       <div role="tabpanel" class="flex tab-pane fade in active" id="tab1">
-        <div class="dw-pnl dw-clstr__sgmnt ">
-          <div class="dw-pnl__cntnt bd--white tx--white">
+        <div class="flex-panel flex-cluster-segment flex-panel--jumbotron">
+          <div class="flex-panel--content bd-red">
+            <!-- START: this is where user will be able to edit the header IMAGE for the active tab -->
             <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab1-header.jpg"
               alt="">
+            <!-- END: this is where user will be able to edit the header IMAGE for the active tab -->
+            <div class="flex-panel--date">
+              <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+              25th - 28th OCTOBER 2017
+              <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+            </div>
           </div>
         </div>
-        <div class="dw-pnl dw-clstr__sgmnt ">
-          <div class="dw-pnl__cntnt bd--white tx--white">
-            <div class="dw-clstr__sgmnt dw-clstr__sgmnt--rw ">
-              <div class="dw-pnl dw-clstr__sgmnt col-sm-9">
-                <div class="dw-pnl__cntnt bd--white tx--white">
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content">
+            <div class="flex-cluster-segment flex-cluster-segment--row ">
+              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-12">
+                <!-- The 1st landing page, WELCOME page will allow the user to edit the IMAGE for the background of the main content area -->
+                <div class="flex-panel--content flex-panel--bgimage bd-red" style="background-image: url(http://launchworkplaces.com/wp-content/uploads/2015/12/meeting-iStock.jpg);">
+                  <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                  <h1>GROW YOUR
+                    <br>BUSINESS TODAY</h1>
                   <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
                     ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
                     ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
-                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami
-                  </p>
-                </div>
-              </div>
-              <div class="dw-pnl dw-clstr__sgmnt col-sm-3">
-                <div class="dw-pnl__cntnt bd--white tx--white">
-                  <h2>sidebar info</h2>
+                    jowl capicola. Swine drumstick boudin, beef jerky buffalo ham hock rump meatball shankle pig pastrami</p>
+                  <!-- END: this is where user will be able to edit the CONTENT component to add text -->
                 </div>
               </div>
             </div>
@@ -77,17 +88,17 @@
         </div>
       </div>
       <div role="tabpanel" class="flex tab-pane fade" id="tab2">
-        <div class="dw-pnl dw-clstr__sgmnt ">
-          <div class="dw-pnl__cntnt bd--white tx--white">
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content bd-red">
             <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab2-header.jpg"
               alt="">
           </div>
         </div>
-        <div class="dw-pnl dw-clstr__sgmnt ">
-          <div class="dw-pnl__cntnt bd--white tx--white">
-            <div class="dw-clstr__sgmnt dw-clstr__sgmnt--rw ">
-              <div class="dw-pnl dw-clstr__sgmnt col-sm-9">
-                <div class="dw-pnl__cntnt bd--white tx--white">
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content">
+            <div class="flex-cluster-segment flex-cluster-segment--row ">
+              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9 col-md-10">
+                <div class="flex-panel--content bd-red">
                   <p>Bacon ipsum dolor amet burgdoggen leberkas frankfurter porchetta capicola pig meatloaf picanha pork spare
                     ribs chicken ribeye. Drumstick capicola biltong, hamburger landjaeger ball tip rump bacon kielbasa short
                     ribs strip steak. Burgdoggen biltong venison swine tenderloin pancetta andouille pig porchetta doner
@@ -105,8 +116,8 @@
                   </p>
                 </div>
               </div>
-              <div class="dw-pnl dw-clstr__sgmnt col-sm-3">
-                <div class="dw-pnl__cntnt bd--white tx--white">
+              <div class="flex-panel flex-cluster-segment col-sm-3 col-md-2">
+                <div class="flex-panel--content bd-red">
                   <h2>sidebar info</h2>
                 </div>
               </div>

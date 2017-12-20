@@ -1,37 +1,108 @@
-.template-01 {
-  .navbar {
-    border-radius: 0;
-    .container-fluid {
-      padding: 0;
-      margin: 0;
-      .navbar-collapse {
+.registration-vert-nav-flex {
+  .flex-panel--nav {
+    background: #000;
+    .flex-panel--content {
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+    }
+    .navbar-default {
+      padding: 20px;
+      border-radius: 0;
+      background-color: transparent;
+      border: 0;
+      border-color: transparent;
+      .navbar-header {
+        width: 100%;
+      }
+      .container-fluid {
         padding: 0;
         margin: 0;
-      }
-      .navbar-nav {
-        width: 100%;
-        margin: 0;
-        li {
+        .navbar-brand {
+          float: right;
+          height: auto;
+          padding: 0;
+        }
+        .navbar-collapse {
+          padding: 0;
+          margin: 0;
+        }
+        .navbar-nav {
           width: 100%;
-          a {
-            padding: 15px;
+          margin: 30px 0 0 0;
+          li {
+            width: 100%;
+            a {
+              padding: 10px 5px;
+              color: #fff;
+              text-transform: uppercase;
+              float: right;
+            }
+            &.active {
+              a {
+                color: red;
+                background-color: transparent;
+              }
+            }
+            &:last-child {
+              margin-top: 10px;
+            }
+            .btn-primary {
+              border-radius: 0;
+              border: 1px solid #fff;
+              background-color: transparent;
+              padding: 7px 20px;
+              &:hover,
+              &:active,
+              &:focus {
+                border-color: red;
+                background-color: red;
+              }
+            }
           }
         }
       }
     }
   }
-  .dw-pnl {
+  .flex-panel {
     margin: 0;
   }
 
-  .dw-clstr {
+  .flex-panel--jumbotron {
+    position: relative;
+    .flex-panel--date {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      background-color: red;
+      color: #fff;
+    }
+  }
+
+  .flex-panel--main {
+    .flex-panel--bgimage {
+      background-size: cover;
+    }
+    .flex-panel--content {
+      padding: 50px 20px 20px 50px;
+    }
+  }
+
+  .flex-panel--content {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .flex-cluster {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 0;
   }
 
-  .dw-clstr__sgmnt {
+  .flex-cluster-segment {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -41,32 +112,24 @@
     padding: 0;
   }
 
-  .dw-clstr__sgmnt--clmn {
+  .flex-cluster-segment--col {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
 
-  .dw-pnl__cntnt {
-    overflow: hidden;
-    width: 100%;
-  }
-  .dw-clstr__sgmnt--rw {
+  .flex-cluster-segment--row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .bd--white {
+  .bd-red {
     border: 1px solid red;
   }
 
-  .tx--white {
-    color: #000;
-  }
-
   @media (max-width: 767px) {
-    .dw-clstr__sgmnt--rw {
+    .flex-cluster-segment--row {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -75,14 +138,14 @@
   }
 
   @media (min-width: 768px) {
-    .dw-pnl {
+    .flex-panel {
       -webkit-column-break-inside: avoid;
       break-inside: avoid;
     }
   }
 
   @media (max-width: 767px) {
-    .dw-clstr--vrt {
+    .flex-cluster--vert {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
