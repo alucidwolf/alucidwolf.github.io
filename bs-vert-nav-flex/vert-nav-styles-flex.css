@@ -249,10 +249,6 @@
   display: flex;
 }
 
-.registration-vert-nav-flex .bd-red {
-  border: 1px solid #e72830;
-}
-
 .registration-vert-nav-flex .btn-primary {
   border-radius: 0;
   border: 1px solid #000;
@@ -268,27 +264,68 @@
   background-color: #e72830;
 }
 
+@media (max-width: 991px) {
+  .registration-vert-nav-flex .flex-panel--main .flex-panel--contact p {
+    margin: 0;
+  }
+  .registration-vert-nav-flex .flex-panel--side .nav-tabs {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 767px) {
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default {
+    padding: 20px 0;
+    margin-bottom: 0;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-collapse {
+    border-color: #e72830;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-toggle {
+    margin: 0px 0 0 15px;
+    border-radius: 0;
+    border: none;
+    float: left;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-toggle:focus, .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-toggle:hover, .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-toggle:active {
+    background-color: #e72830;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav {
+    margin: 0;
+  }
+  .registration-vert-nav-flex .flex-panel--nav .navbar-default .container-fluid .navbar-nav li a {
+    float: none;
+  }
   .registration-vert-nav-flex .flex-cluster-segment--row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-}
-
-@media (min-width: 768px) {
-  .registration-vert-nav-flex .flex-panel {
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid;
-  }
-}
-
-@media (max-width: 767px) {
   .registration-vert-nav-flex .flex-cluster--vert {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
   }
+}
+
+.registration-vert-nav-flex .back-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.5);
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  text-align: center;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.registration-vert-nav-flex .hide-me {
+  opacity: 0;
 }
