@@ -51,6 +51,12 @@
                     <a href="#tab3" data-toggle="tab" aria-expanded="false">Schedule</a>
                   </li>
                   <li>
+                    <a href="#tab4" data-toggle="tab" aria-expanded="false">Speakers</a>
+                  </li>
+                  <li>
+                    <a href="#tab5" data-toggle="tab" aria-expanded="false">Contact</a>
+                  </li>
+                  <li>
                     <a href="#tab6" data-toggle="tab" aria-expanded="false" class="btn btn-primary">Register</a>
                   </li>
                 </ul>
@@ -168,7 +174,7 @@
             <div class="flex-cluster-segment flex-cluster-segment--row ">
               <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9">
                 <div class="flex-panel--content bd-red">
-                  <h1>Schedule</h1>
+                  <h1 id="schedule">Schedule</h1>
                   <div id="tab-schedule" class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="day1">
                       <div class="row main-item">
@@ -342,11 +348,99 @@
           </div>
         </div>
       </div>
+      <div role="tabpanel" class="flex tab-pane fade" id="tab4">
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content bd-red">
+            <!-- START: this is where user will be able to edit the header IMAGE for the active tab -->
+            <img class="img-responsive" src="https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/bs-horiz-nav/tab2-header.jpg"
+              alt="">
+            <!-- END: this is where user will be able to edit the header IMAGE for the active tab -->
+          </div>
+        </div>
+        <div class="flex-panel flex-cluster-segment ">
+          <div class="flex-panel--content">
+            <div class="flex-cluster-segment flex-cluster-segment--row ">
+              <div class="flex-panel flex-cluster-segment flex-panel--main col-sm-9">
+                <div class="flex-panel--content bd-red">
+                  <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                  <h1>Speakers</h1>
+                  <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                  <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <img src="https://avatars1.githubusercontent.com/u/563139?v=4" alt="speaker-photo">
+                        <div class="caption">
+                          <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                          <h3>Speaker Name</h3>
+                          <p>Speaker Title</p>
+                          <p>
+                            <span class="lozenge">Speaker Level</span>
+                          </p>
+                          <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <img src="https://avatars3.githubusercontent.com/u/48378?v=4" alt="speaker-photo">
+                        <div class="caption">
+                          <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                          <h3>Speaker Name</h3>
+                          <p>Speaker Title</p>
+                          <p>
+                            <span class="lozenge">Speaker Level</span>
+                          </p>
+                          <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <img src="https://avatars2.githubusercontent.com/u/1688997?v=4" alt="speaker-photo">
+                        <div class="caption">
+                          <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                          <h3>Speaker Name</h3>
+                          <p>Speaker Title</p>
+                          <p>
+                            <span class="lozenge">Speaker Level</span>
+                          </p>
+                          <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-panel flex-cluster-segment flex-panel--side col-sm-3">
+                <div class="flex-panel--content flex-panel--speaker bd-red">
+                  <div class="side-item date">
+                    <!-- START: this is where user will be able to edit the CONTENT component to add text -->
+                    <h3>Speaker FAQ</h3>
+                    <p>Bacon ipsum dolor amet pancetta tail ball tip filet mignon hamburger turkey pig fatback swine chicken
+                      jerky pork belly shankle venison rump. Alcatra bresaola filet mignon pork. Pork chop capicola buffalo,
+                      chuck biltong beef ribs leberkas. Picanha prosciutto ham, ground round meatloaf beef brisket leberkas
+                      tongue kevin turducken hamburger. Alcatra hamburger ground round biltong doner</p>
+                    <!-- END: this is where user will be able to edit the CONTENT component to add text -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+
+  <script>
+    $(".flex-panel--side .nav a").on("click", function () {
+      $("html,body").delay(100).animate({
+        scrollTop: $("#schedule").offset().top
+      }, 500);
+    });
+  </script>
 </body>
 
 </html>

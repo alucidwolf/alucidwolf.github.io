@@ -40,6 +40,12 @@
               color: $brand-light-base;
               text-transform: uppercase;
               float: right;
+              &:hover,
+              &:active,
+              &:focus {
+                color: $brand-primary;
+                background-color: transparent;
+              }
             }
             &.active {
               a {
@@ -60,6 +66,7 @@
               &:focus {
                 border-color: $brand-primary;
                 background-color: $brand-primary;
+                color: #fff;
               }
             }
           }
@@ -67,30 +74,7 @@
       }
     }
   }
-  .flex-panel--side {
-    .nav-tabs {
-      padding: 50px;
-      border-bottom: none;
-      > li {
-        float: none;
-        > a {
-          border-radius: 0;
-          text-align: center;
-          border: 2px solid #fff;
-          color: #fff;
-          .schedule-day {
-            display: block;
-            font-size: 40px;
-          }
-        }
-        &.active {
-          a {
-            color: $brand-primary;
-          }
-        }
-      }
-    }
-  }
+
   .flex-panel {
     margin: 0;
   }
@@ -110,6 +94,7 @@
   .flex-panel--main {
     .flex-panel--bgimage {
       background-size: cover;
+      min-height: 400px;
     }
     .flex-panel--content {
       padding: 50px;
@@ -121,19 +106,67 @@
         border-bottom: none;
       }
     }
+    .thumbnail {
+      border: none;
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+      .lozenge {
+        background-color: $brand-primary;
+        color: #fff;
+        padding: 5px 10px;
+      }
+    }
   }
 
   .flex-panel--side {
+    .nav-tabs {
+      padding: 50px;
+      border-bottom: none;
+      > li {
+        float: none;
+        > a {
+          border-radius: 0;
+          text-align: center;
+          border: 2px solid #fff;
+          color: #fff;
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: #fff;
+            color: $brand-primary;
+          }
+          .schedule-day {
+            display: block;
+            font-size: 40px;
+          }
+        }
+        &.active {
+          a {
+            color: $brand-primary;
+          }
+        }
+      }
+    }
     .flex-panel--content {
       background-color: $brand-primary;
       .side-item {
         text-align: center;
-        padding: 10px;
+        padding: 30px 10px 0 10px;
         color: $brand-light-base;
         span[class*="fa"] {
           font-size: 40px;
           padding-bottom: 10px;
         }
+      }
+    }
+    .flex-panel--speaker {
+      background-color: #ebebeb;
+      padding: 50px 10px;
+      .side-item {
+        text-align: right;
+        color: #222;
       }
     }
   }
