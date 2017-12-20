@@ -212,6 +212,11 @@
   flex-direction: column;
 }
 
+.registration-vert-nav-flex .flex-cluster-segment--col .flex {
+  height: auto;
+  min-height: 100%;
+}
+
 .registration-vert-nav-flex .flex-cluster-segment--row {
   display: -webkit-box;
   display: -ms-flexbox;
