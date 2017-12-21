@@ -1,6 +1,17 @@
 @import "variables-theme-red";
+@import url($brand-font-family-special);
+@import url($brand-font-family-sans-serif);
 
 .registration-vert-nav-flex {
+  font-family: "Open Sans", sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
   .flex-panel--nav {
     background: $brand-dark-base;
     .flex-panel--content {
@@ -55,7 +66,7 @@
                   border-radius: 0;
                   border: 1px solid $brand-primary;
                   background-color: $brand-primary;
-                  color: #fff;
+                  color: $brand-light-base;
                   padding: 7px 20px;
                 }
               }
@@ -73,7 +84,7 @@
               &:focus {
                 border-color: $brand-primary;
                 background-color: $brand-primary;
-                color: #fff;
+                color: $brand-light-base;
               }
             }
           }
@@ -101,7 +112,7 @@
   .flex-panel--main {
     > .flex-panel--content {
       padding: 50px;
-      min-height: 700px;
+      //min-height: 700px;  was temp test for older browsers handling of height in flex
     }
     .flex-panel--bgimage {
       background-size: cover;
@@ -121,7 +132,7 @@
       }
       .lozenge {
         background-color: $brand-primary;
-        color: #fff;
+        color: $brand-light-base;
         padding: 5px 10px;
       }
     }
@@ -155,12 +166,12 @@
         > a {
           border-radius: 0;
           text-align: center;
-          border: 2px solid #fff;
-          color: #fff;
+          border: 2px solid $brand-light-base;
+          color: $brand-light-base;
           &:hover,
           &:active,
           &:focus {
-            background-color: #fff;
+            background-color: $brand-light-base;
             color: $brand-primary;
           }
           .schedule-day {
@@ -287,7 +298,7 @@
               background-color: $brand-primary;
             }
             .icon-bar {
-              background-color: #fff;
+              background-color: $brand-light-base;
             }
           }
           .navbar-nav {
