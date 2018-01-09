@@ -1,0 +1,350 @@
+@import "variables-theme-red";
+@import url($brand-font-family-special);
+@import url($brand-font-family-sans-serif);
+
+.registration-vert-nav-flex {
+  font-family: "Open Sans", sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+  }
+  .flex-panel--nav {
+    background: $brand-dark-base;
+    .flex-panel--content {
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+    }
+    .navbar-default {
+      padding: 20px;
+      border-radius: 0;
+      background-color: transparent;
+      border: 0;
+      border-color: transparent;
+      .navbar-header {
+        width: 100%;
+      }
+      .container-fluid {
+        padding: 0;
+        margin: 0;
+        .navbar-brand {
+          float: right;
+          height: auto;
+          padding: 0;
+        }
+        .navbar-collapse {
+          padding: 0;
+          margin: 0;
+        }
+        .navbar-nav {
+          width: 100%;
+          margin: 30px 0 0 0;
+          li {
+            width: 100%;
+            a {
+              padding: 10px 5px;
+              color: $brand-light-base;
+              text-transform: uppercase;
+              float: right;
+              &:hover,
+              &:active,
+              &:focus {
+                color: $brand-primary;
+                background-color: transparent;
+              }
+            }
+            &.active {
+              a {
+                color: $brand-primary;
+                background-color: transparent;
+                &.btn-primary {
+                  border-radius: 0;
+                  border: 1px solid $brand-primary;
+                  background-color: $brand-primary;
+                  color: $brand-light-base;
+                  padding: 7px 20px;
+                }
+              }
+            }
+            &:last-child {
+              margin-top: 10px;
+            }
+            .btn-primary {
+              border-radius: 0;
+              border: 1px solid $brand-light-base;
+              background-color: transparent;
+              padding: 7px 20px;
+              &:hover,
+              &:active,
+              &:focus {
+                border-color: $brand-primary;
+                background-color: $brand-primary;
+                color: $brand-light-base;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .flex-panel {
+    margin: 0;
+  }
+
+  .flex-panel--jumbotron {
+    position: relative;
+    .flex-panel--date {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      background-color: $brand-primary;
+      color: $brand-light-base;
+    }
+  }
+
+  .flex-panel--main {
+    > .flex-panel--content {
+      padding: 50px;
+      //min-height: 700px;  was temp test for older browsers handling of height in flex
+    }
+    .flex-panel--bgimage {
+      background-size: cover;
+    }
+    .main-item {
+      border-bottom: 2px solid silver;
+      padding: 20px 0;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .thumbnail {
+      border: none;
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+      .lozenge {
+        background-color: $brand-primary;
+        color: $brand-light-base;
+        padding: 5px 10px;
+      }
+    }
+    .flex-panel--contact {
+      p {
+        display: table;
+        padding: 15px;
+        min-height: 70px;
+        span:first-child {
+          display: table-cell;
+          vertical-align: middle;
+          padding-right: 15px;
+          font-size: 20px;
+        }
+      }
+      &.email {
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .flex-panel--side {
+    .nav-tabs {
+      padding: 50px;
+      border-bottom: none;
+      > li {
+        float: none;
+        > a {
+          border-radius: 0;
+          text-align: center;
+          border: 2px solid $brand-light-base;
+          color: $brand-light-base;
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: $brand-light-base;
+            color: $brand-primary;
+          }
+          .schedule-day {
+            display: block;
+            font-size: 40px;
+          }
+        }
+        &.active {
+          a {
+            color: $brand-primary;
+          }
+        }
+      }
+    }
+    .flex-panel--content {
+      background-color: $brand-primary;
+      .side-item {
+        text-align: center;
+        padding: 30px 10px 0 10px;
+        color: $brand-light-base;
+        span[class*="fa"] {
+          font-size: 40px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+    .flex-panel--speaker {
+      background-color: #ebebeb;
+      padding: 50px 10px;
+      .side-item {
+        text-align: right;
+        color: #222;
+      }
+    }
+  }
+
+  .flex-panel--content {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .flex-cluster {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+  }
+
+  .flex-cluster-segment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0;
+  }
+
+  .flex-cluster-segment--col {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    .flex {
+      height: auto;
+      min-height: 100%;
+    }
+  }
+
+  .flex-cluster-segment--row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .btn-primary {
+    border-radius: 0;
+    border: 1px solid $brand-dark-base;
+    background-color: transparent;
+    padding: 8px 35px;
+    color: $brand-dark-base;
+    text-transform: uppercase;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $brand-light-base;
+      border-color: $brand-primary;
+      background-color: $brand-primary;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .flex-panel--main {
+      .flex-panel--contact {
+        p {
+          margin: 0;
+        }
+      }
+    }
+    .flex-panel--side {
+      .nav-tabs {
+        padding: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .flex-panel--nav {
+      .navbar-default {
+        padding: 20px 0;
+        margin-bottom: 0;
+        .container-fluid {
+          .navbar-collapse {
+            border-color: $brand-primary;
+          }
+          .navbar-toggle {
+            margin: 0px 0 0 15px;
+            border-radius: 0;
+            border: none;
+            float: left;
+            &:focus,
+            &:hover,
+            &:active {
+              background-color: $brand-primary;
+            }
+            .icon-bar {
+              background-color: $brand-light-base;
+            }
+          }
+          .navbar-nav {
+            margin: 0;
+            li {
+              a {
+                float: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .flex-cluster-segment--row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    .flex-cluster--vert {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .flex-panel {
+      // -webkit-column-break-inside: avoid;
+      // break-inside: avoid;
+    }
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    text-align: center;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+  }
+  .hide-me {
+    opacity: 0;
+  }
+}

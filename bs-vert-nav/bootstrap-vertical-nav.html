@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bootstrap Vertical Nav</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="" id="theme-stylesheet">
+  <link rel="stylesheet" href="vert-nav-styles.css">
+</head>
+
+<body class="verticalClass nav-closed">
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#tab1" data-toggle="tab">Welcome Welcome Welcome Welcome Welcome
+              </a>
+            </li>
+            <li>
+              <a href="#tab2" data-toggle="tab">Register
+              </a>
+            </li>
+            <li>
+              <div class="form-group">
+                <select class="form-control" id="theme-choice">
+                  <option value="https://bootswatch.com/3/paper/bootstrap.min.css">Paper</option>
+                  <option value="https://bootswatch.com/3/cerulean/bootstrap.min.css">Cerulean</option>
+                  <option value="https://bootswatch.com/3/yeti/bootstrap.min.css">Yeti</option>
+                  <option value="https://bootswatch.com/3/sandstone/bootstrap.min.css">Sandstone</option>
+                  <option value="https://bootswatch.com/3/readable/bootstrap.min.css">Readable</option>
+                  <option value="https://bootswatch.com/3/cyborg/bootstrap.min.css">Cyborg</option>
+                  <option value="https://bootswatch.com/3/cosmo/bootstrap.min.css">Cosmo</option>
+                </select>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="tab1">
+        <img class="img-responsive" src="tab1-header.jpg" alt="">
+        <div class="container-fluid container-max-width">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>tab1</h1>
+              <h1>tab1</h1>
+              <h1>tab1</h1>
+              <h1>tab1</h1>
+              <h1>tab1</h1>
+              <h1>tab1</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab2">
+        <img class="img-responsive" src="tab2-header.jpg" alt="">
+        <div class="container-fluid container-max-width">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>tab2</h1>
+              <h1>tab2</h1>
+              <h1>tab2</h1>
+              <h1>tab2</h1>
+              <h1>tab2</h1>
+              <h1>tab2</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">This footer will always be positioned at the bottom of the page, but
+    <strong>not fixed</strong>.</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script>
+    $(".verticalClass .navbar-toggle").on("click", function (e) {
+      e.preventDefault();
+      console.log("navbar-toggle clicked");
+      $(".verticalClass").toggleClass("nav-closed");
+    });
+    $("#theme-choice").change(function () {
+      $("#theme-stylesheet").attr({
+        "href": $("#theme-choice").find(":selected").val()
+      });
+    });
+  </script>
+</body>
+
+</html>
