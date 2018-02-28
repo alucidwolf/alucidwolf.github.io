@@ -16,17 +16,18 @@ let bigCityURL =
 let DDMStates = document.getElementById("states");
 let $DDMStates = $("#states");
 let $DDMCities = $("#cities");
-let countme = 0
+let countme = 0;
+let vardomcount = 1;
 function output(text) {
   console.log(text);
 }
 
-//remove hidden class to show emulate a loading animation
+//remove hidden class to emulate a loading animation
 //return a promise for the request to go get a file
 //log status as it is happening
 function getFile(file) {
   $(".loading").removeClass("hidden");
-  let promiseObj = new Promise( (resolve, reject) => {
+  let promiseObj = new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", file, true);
     xhr.send();
@@ -55,11 +56,11 @@ function parseFileData(data) {
   console.log("start parsing " + countme);
   return new Promise((resolve, reject) => {
     try {
-      resolve(JSON.parse(data))
+      resolve(JSON.parse(data));
     } catch (e) {
-      reject(e)
+      reject(e);
     }
-  })
+  });
 }
 
 //mapping data passed in from each file that was received to its appropriate select field
@@ -67,7 +68,6 @@ function mapToDDM(data) {
   //console.log(data);
   let option;
   let DDM;
-  let vardomcount = 1;
   output("begin map to dom " + vardomcount);
   try {
     if (data[0].code === "AF") {
@@ -122,50 +122,50 @@ function updateCity(url, state) {
   [url]
     .map(getFile)
     .reduce(
-    function (chain, filePromise) {
-      return chain
-        .then(function () {
-          return filePromise;
-        })
-        .then(parseFileData)
-        .then(function (data) {
-          console.log(data.length);
-          console.log(state);
-          let option;
-          let DDM = document.getElementById("cities");
-          //remove old values
-          while (DDM.options.length > 0) {
-            DDM.remove(0);
-          }
-          let fsData = [];
-          //get just the values we want for cities that match the state the user chose
-          for (let i = 0; i < data.length; i++) {
-            if (data[i].state === state) {
-              fsData.push(data[i].name);
+      function(chain, filePromise) {
+        return chain
+          .then(function() {
+            return filePromise;
+          })
+          .then(parseFileData)
+          .then(function(data) {
+            console.log(data.length);
+            console.log(state);
+            let option;
+            let DDM = document.getElementById("cities");
+            //remove old values
+            while (DDM.options.length > 0) {
+              DDM.remove(0);
             }
-          }
-          //sort just the cities we need in alphabetical order
-          fsData.sort();
-          console.log(fsData);
-          //map those to the city DDM
-          for (let i = 0; i < fsData.length; i++) {
-            option = document.createElement("option");
-            option.text = fsData[i];
-            option.value = fsData[i];
-            DDM.add(option);
-          }
-        });
-    },
-    Promise.resolve() // fulfilled promise to start chain
+            let fsData = [];
+            //get just the values we want for cities that match the state the user chose
+            for (let i = 0; i < data.length; i++) {
+              if (data[i].state === state) {
+                fsData.push(data[i].name);
+              }
+            }
+            //sort just the cities we need in alphabetical order
+            fsData.sort();
+            console.log(fsData);
+            //map those to the city DDM
+            for (let i = 0; i < fsData.length; i++) {
+              option = document.createElement("option");
+              option.text = fsData[i];
+              option.value = fsData[i];
+              DDM.add(option);
+            }
+          });
+      },
+      Promise.resolve() // fulfilled promise to start chain
     )
-    .then(function () {
+    .then(function() {
       //when everything is complete, lift pseudo loading animation
       $(".loading").addClass("hidden");
       output("Complete updating city ddm");
     });
 }
 
-$DDMStates.on("change", function () {
+$DDMStates.on("change", function() {
   //when state DDM changes, set value selected and fire off function to update cities based off that value
   let stateChosen = $(this).val();
   console.log(stateChosen);
@@ -174,21 +174,21 @@ $DDMStates.on("change", function () {
 
 document
   .getElementById("getLocationData")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     [countryURL, statesProvincesURL, citiesCAURL, citiesUSAURL, bigCityURL]
       .map(getFile)
       .reduce(
-      function (chain, filePromise) {
-        return chain
-          .then(function () {
-            return filePromise;
-          })
-          .then(parseFileData)
-          .then(mapToDDM);
-      },
-      Promise.resolve() // fulfilled promise to start chain
+        function(chain, filePromise) {
+          return chain
+            .then(function() {
+              return filePromise;
+            })
+            .then(parseFileData)
+            .then(mapToDDM);
+        },
+        Promise.resolve() // fulfilled promise to start chain
       )
-      .then(function () {
+      .then(function() {
         //when everything is complete, lift pseudo loading animation
         $(".loading").addClass("hidden");
         output("Complete updating all fields from array of file names");
