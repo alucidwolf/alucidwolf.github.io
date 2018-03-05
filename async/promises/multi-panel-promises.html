@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises, Updating Multiple Panels</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="http://uikits.cendyn.com/Areas/v002/Plugins/font-icons/css/font-icons.min.css">
+    <style>
+        .loader {
+            padding: 10px;
+            background-color: #f90;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="well">
+        <button class="btn btn-primary" onclick="logRandomNumber()">Update All Panels / Remove Loader When Complete</button>
+    </div>
+
+    <div class="container">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel #1</div>
+                <div id="file1" class="panel-body">
+                    <div class="loader hide">Loading...</div>
+                    Panel content
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel #2</div>
+                <div id="file2" class="panel-body">
+                    <div class="loader hide">Loading...</div>
+                    Panel content
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Panel #3</div>
+                <div id="file3" class="panel-body">
+                    <div class="loader hide">Loading...</div>
+                    Panel content
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="multi-panel-promises.js"></script> -->
+    <script src="multi-panel-promises-single.js"></script>
+</body>
+
+</html>

@@ -19,7 +19,7 @@ const willIGetNewPhone = new Promise((resolve, reject) => {
 });
 
 //2nd promise
-//return a promise in a f unction, prepend with 'async'
+//return a promise in a function, prepend with 'async'
 async function showOff(phone1) {
   return new Promise((resolve, reject) => {
     var message =
