@@ -23,6 +23,7 @@ function removeLoader(el) {
 
 // jquery element, random number to simulate duration of network request
 function updatePanel(element, duration, bool) {
+  element.text(duration);
   addLoader(element)
     .then(function(returnEl) {
       return new Promise(function(resolve, reject) {
@@ -41,6 +42,7 @@ function updatePanel(element, duration, bool) {
 
 function updatePanelDontCare(element) {
   let rn = getRandomNumber();
+  element.text(rn);
   console.log("random number generated: " + rn);
   let promObj = new Promise(function(resolve, reject) {
     setTimeout(resolve, rn, rn);
@@ -50,6 +52,7 @@ function updatePanelDontCare(element) {
 }
 
 async function updatePanelPromise(element, duration) {
+  element.text(duration);
   return new Promise(function(resolve, reject) {
     addLoader(element)
       .then(function(returnEl) {
