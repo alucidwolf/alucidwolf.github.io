@@ -19,8 +19,29 @@
 
 <body>
 
-    <div class="well">
-        <button class="btn btn-primary" onclick="logRandomNumber()">Update All Panels / Remove Loader When Complete</button>
+    <div class="container">
+        <div class="col-xs-4">
+            <div class="well">
+                <p class="lead">Trigger all panels to update at once.</p>
+                <p>When each one is finished, remove the loading animation.</p>
+                <button class="btn btn-primary" onclick="updateAllPanelsInd()">Update</button>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="well">
+                <p class="lead">Trigger panels to update one at a time.</p>
+                <p>The next one will wait for the first to finish before it starts. Useful for when a component needs to update
+                    based on the return value of a previously completed process.</p>
+                <button class="btn btn-success" onclick="updateAllPanels()">Update</button>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="well">
+                <p class="lead">Trigger all panels to update at once.</p>
+                <p>Do not care when each is finished for data, but only want to remove loading animation once all are complete.</p>
+                <button class="btn btn-info" onclick="updateAllPanelsDontCare()">Update</button>
+            </div>
+        </div>
     </div>
 
     <div class="container">

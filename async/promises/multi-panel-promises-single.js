@@ -1,88 +1,126 @@
+function getRandomNumber() {
+  let rnum = Math.round(Math.random() * 1e4) % 4000 + 1000;
+  return rnum;
+}
+
 function addLoader(el) {
-  el.removeClass("hide");
+  if (el.hasClass("hide")) {
+    el.removeClass("hide");
+  }
   return new Promise(function(resolve, reject) {
     resolve(el);
   });
 }
 
 function removeLoader(el) {
-  el.addClass("hide");
+  if (!el.hasClass("hide")) {
+    el.addClass("hide");
+  }
   return new Promise(function(resolve, reject) {
     resolve("hidden");
   });
 }
 
-function getRandomNumber() {
-  let rnum = Math.round(Math.random() * 1e4) % 4000 + 1000;
-  return rnum;
+// jquery element, random number to simulate duration of network request
+function updatePanel(element, duration, bool) {
+  addLoader(element)
+    .then(function(returnEl) {
+      return new Promise(function(resolve, reject) {
+        return setTimeout(function() {
+          return resolve(returnEl);
+        }, duration);
+      });
+    })
+    .then(function(val) {
+      if (bool) {
+        removeLoader(element);
+      }
+      console.log(val);
+    });
 }
 
-async function timerT(value, duration) {
-  console.log(value);
+function updatePanelDontCare(element) {
+  let rn = getRandomNumber();
+  console.log("random number generated: " + rn);
+  let promObj = new Promise(function(resolve, reject) {
+    setTimeout(resolve, rn, rn);
+  });
+  addLoader(element);
+  return promObj;
+}
+
+async function updatePanelPromise(element, duration) {
   return new Promise(function(resolve, reject) {
-    return setTimeout(function() {
-      return resolve("done 1");
-    }, duration);
+    addLoader(element)
+      .then(function(returnEl) {
+        return new Promise(function(resolve, reject) {
+          return setTimeout(function() {
+            return resolve(returnEl);
+          }, duration);
+        });
+      })
+      .then(function(val) {
+        console.log(val);
+      })
+      .then(function() {
+        resolve(element);
+      });
   });
 }
 
-function updatePanel(element, duration) {
-  addLoader(element).then(function(returnEl) {
-    console.log(returnEl);
-  });
-  removeLoader(element);
-}
-
-async function logRandomNumber() {
-  let rn1 = getRandomNumber();
-  let rn2 = getRandomNumber();
-  let rn3 = getRandomNumber();
+function updateAllPanelsInd() {
   let el1 = $("#file1 .loader");
   let el2 = $("#file2 .loader");
   let el3 = $("#file3 .loader");
+  let rn1 = getRandomNumber();
+  let rn2 = getRandomNumber();
+  let rn3 = getRandomNumber();
+
   console.log("p1: " + rn1 + ", p2: " + rn2 + ", p3: " + rn3);
 
-  updatePanel(el1, rn1);
+  updatePanel(el1, rn1, true);
+  updatePanel(el2, rn2, true);
+  updatePanel(el3, rn3, true);
+}
 
-  addLoader($("#file1 .loader"))
-    .then(function(val) {
-      console.log(val);
-      return new Promise(function(resolve, reject) {
-        return setTimeout(function() {
-          return resolve("done 1");
-        }, rn1);
-      });
-    })
-    .then(function(val) {
-      removeLoader($("#file1 .loader"));
-      console.log(val);
-    });
+async function updateAllPanels() {
+  let el1 = $("#file1 .loader");
+  let el2 = $("#file2 .loader");
+  let el3 = $("#file3 .loader");
+  let rn1 = getRandomNumber();
+  let rn2 = getRandomNumber();
+  let rn3 = getRandomNumber();
 
-  addLoader($("#file2 .loader"))
-    .then(function(val) {
-      console.log(val);
-      return new Promise(function(resolve, reject) {
-        return setTimeout(function() {
-          return resolve("done 2");
-        }, rn2);
-      });
-    })
-    .then(function(val) {
-      removeLoader($("#file2 .loader"));
-      console.log(val);
-    });
+  console.log("p1: " + rn1 + ", p2: " + rn2 + ", p3: " + rn3);
 
-  addLoader($("#file3 .loader"))
-    .then(function(val) {
-      console.log(val);
-      return new Promise(function(resolve, reject) {
-        return setTimeout(function() {
-          return resolve("done 3");
-        }, rn3);
-      });
-    })
-    .then(function(val) {
-      removeLoader($("#file3 .loader"));
-      console.log(val);
-    });
+  addLoader(el1);
+  addLoader(el2);
+  addLoader(el3);
+
+  // Set 'await' function in the order that processes should be completed
+  let up3 = await updatePanelPromise(el3, rn3);
+  let up2 = await updatePanelPromise(el2, rn2);
+  let up1 = await updatePanelPromise(el1, rn1);
+
+  let arr1 = [up1, up2, up3];
+
+  Promise.all(arr1).then(function(values) {
+    console.log(values);
+    values.map(removeLoader);
+  });
+}
+
+async function updateAllPanelsDontCare() {
+  let el1 = $("#file1 .loader");
+  let el2 = $("#file2 .loader");
+  let el3 = $("#file3 .loader");
+  let elArr = [el1, el2, el3];
+  let p1 = updatePanelDontCare(el1);
+  let p2 = updatePanelDontCare(el2);
+  let p3 = updatePanelDontCare(el3);
+  let arr1 = [p1, p2, p3];
+
+  Promise.all(arr1).then(function(values) {
+    elArr.map(removeLoader);
+  });
 }
