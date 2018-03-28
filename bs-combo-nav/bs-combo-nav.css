@@ -1,0 +1,84 @@
+.verticalClass .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  border-radius: 0;
+  width: 200px;
+  transition: all 0.5s ease-in-out;
+  z-index: 1001;
+  margin-bottom: 0;
+}
+
+.verticalClass .navbar .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.verticalClass .navbar .container-fluid .navbar-collapse {
+  padding: 0;
+  margin: 0;
+}
+
+.verticalClass .navbar .container-fluid .navbar-brand {
+  margin: 0 !important;
+}
+
+.verticalClass .navbar .container-fluid .collapse {
+  display: block;
+}
+
+.verticalClass .navbar .container-fluid .navbar-nav {
+  width: 100%;
+  margin: 0;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+
+.verticalClass .navbar .container-fluid .navbar-nav li {
+  width: 100%;
+}
+
+.verticalClass .navbar .container-fluid .navbar-nav li a {
+  padding: 15px 57px 15px 15px;
+  line-height: 20px;
+}
+
+.verticalClass .navbar .container-fluid .navbar-nav li a span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -11px;
+  font-size: 22px;
+}
+
+.verticalClass .navbar .navbar-header {
+  width: 100%;
+  margin: 0;
+}
+
+.verticalClass .navbar .navbar-header .navbar-toggle {
+  border-radius: 0;
+  border: 0;
+}
+
+.verticalClass.nav-closed {
+  position: relative;
+}
+
+.verticalClass.nav-closed .navbar {
+  margin-left: -200px;
+}
+
+.verticalClass.nav-closed .tab-content {
+  margin-left: 0;
+}
+
+.verticalClass .tab-content {
+  margin-left: 200px;
+}
+
+.verticalClass .tab-content .tab-pane .container-max-width {
+  max-width: 1024px;
+  margin: 0 auto;
+}

@@ -1,0 +1,7 @@
+ul:nth-child() > li:hover {
+  opacity: 0.5;
+}
+
+ul:nth-child() > li:hover ul > li:hover {
+  opacity: 1;
+}

@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500");
+.new-toc .ui-toc-tree .x-tree-node .lct-1 a span.ltxt1 {
+  font-family: "Poppins", sans-serif;
+  color: #242559 !important;
+  font-size: 16px;
+  font-weight: 500;
+}

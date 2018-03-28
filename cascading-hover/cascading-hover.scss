@@ -1,0 +1,14 @@
+ul:nth-child() {
+  > li {
+    &:hover {
+      opacity: 0.5;
+      ul {
+        > li {
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

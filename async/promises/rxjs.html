@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/@reactivex/rxjs@5.5.6/dist/global/Rx.js"></script>
+  <script>
+    let Observable = Rx.Observable;
+    let resultA, resultB, resultC;
+
+    function addAsync(num1, num2) {
+      // use ES6 fetch API, which return a promise
+      const promise = Promise.resolve(num1 + num2);
+
+      console.log(promise)
+      return Observable.fromPromise(promise);
+    }
+
+    addAsync(1, 2)
+      .delay(1000)
+      .do(x => resultA = x)
+      .flatMap(x => addAsync(x, 3))
+      .delay(100)
+      .do(x => resultB = x)
+      .flatMap(x => addAsync(x, 4))
+      .delay(10)
+      .do(x => resultC = x)
+      .subscribe(x => {
+        console.log('total: ' + x)
+        console.log(resultA, resultB, resultC)
+      });
+
+  </script>
+</body>
+
+</html>

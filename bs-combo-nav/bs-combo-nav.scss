@@ -1,0 +1,73 @@
+.verticalClass {
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    border-radius: 0;
+    width: 200px;
+    transition: all 0.5s ease-in-out;
+    z-index: 1001;
+    margin-bottom: 0;
+    .container-fluid {
+      padding: 0;
+      margin: 0;
+      .navbar-collapse {
+        padding: 0;
+        margin: 0;
+      }
+      .navbar-brand {
+        margin: 0 !important;
+      }
+      .collapse {
+        display: block;
+      }
+      .navbar-nav {
+        width: 100%;
+        margin: 0;
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+        li {
+          width: 100%;
+          a {
+            padding: 15px 57px 15px 15px;
+            line-height: 20px;
+            span {
+              position: absolute;
+              top: 50%;
+              right: 20px;
+              margin-top: -11px;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+    .navbar-header {
+      width: 100%;
+      margin: 0;
+      .navbar-toggle {
+        border-radius: 0;
+        border: 0;
+      }
+    }
+  }
+  &.nav-closed {
+    position: relative;
+    .navbar {
+      margin-left: -200px;
+    }
+    .tab-content {
+      margin-left: 0;
+    }
+  }
+  .tab-content {
+    margin-left: 200px;
+    .tab-pane {
+      .container-max-width {
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

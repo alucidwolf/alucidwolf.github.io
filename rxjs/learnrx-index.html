@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Learn RxJS</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.5.6/Rx.min.js"></script>
+  <script>
+    // From 'http://reactivex.io/learnrx/'
+    /////////////////////////////////////
+    // Implement concatAll()
+    Array.prototype.concatAll = function () {
+      var results = [];
+      this.forEach(function (subArray) {
+        results.push.apply(results, subArray);
+      });
+
+      return results;
+    };
+
+    // Implement concatMap()
+    Array.prototype.concatMap = function (projectionFunctionThatReturnsArray) {
+      console.log("concat map passed in: " + projectionFunctionThatReturnsArray);
+      var returning = this.map(function (item) {
+        console.log("concat map return item: " + JSON.stringify(item, null, 2));
+        return projectionFunctionThatReturnsArray(item);
+      })
+        // apply the concatAll function to flatten the two-dimensional array
+        .concatAll();
+      console.log("end concat map: " + returning);
+      return returning;
+    };
+
+    // Implement reduce()
+    // [1,2,3].reduce(function(accumulatedValue, currentValue)
+    // { return accumulatedValue + currentValue; }); === [6];
+
+    // [1,2,3].reduce(function(accumulatedValue, currentValue)
+    // { return accumulatedValue + currentValue; }, 10); === [16];
+    Array.prototype.reduce = function (combiner, initialValue) {
+      var counter,
+        accumulatedValue;
+
+      //console.log("this: " + this + " " + this.length + " arguments: " + arguments.length);
+
+      if (this.length === 0) {
+        return this;
+      } else {
+        if (arguments.length === 1) {
+          counter = 1;
+          accumulatedValue = this[0]
+        } else if (arguments.length >= 2) {
+          counter = 0;
+          accumulatedValue = initialValue;
+          //console.log("args more than 2 " + accumulatedValue);
+        } else {
+          throw "Invalid"
+        }
+
+        while (counter < this.length) { // 1 < 5 TO START
+          //console.log("inside while " + accumulatedValue);
+          accumulatedValue = combiner(accumulatedValue, this[counter])
+          //console.log("inside while after value assign " + accumulatedValue);
+          counter++;
+        }
+        //console.log("return " + accumulatedValue);
+        return [accumulatedValue];
+      }
+    };
+  </script>
+</body>
+
+</html>
