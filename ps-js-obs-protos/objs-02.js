@@ -1,52 +1,52 @@
 "use strict";
 
 /*Alternate bracket notation use*/
-// var cat = {
-//   name: "Fluffy",
-//   color: "White"
-// };
+var cat = {
+  name: "Fluffy",
+  color: "White"
+};
 
-// cat["Eye Color"] = "Green";
-// console.log(cat["Eye Color"]);
+cat["Eye Color"] = "Green";
+console.log(cat["Eye Color"]);
 
 //
 
 /*Property Descriptor Attributes*/
-// var cat = {
-//   name: {
-//     first: "Fluffy",
-//     last: "LeBeouf"
-//   },
-//   color: "White"
-// };
+var cat = {
+  name: {
+    first: "Fluffy",
+    last: "LeBeouf"
+  },
+  color: "White"
+};
 
-// Object.defineProperty(cat, "name", { writable: false });
-// Object.freeze(cat.name);
-// cat.name.first = "Scratchy";
+Object.defineProperty(cat, "name", { writable: false });
+Object.freeze(cat.name);
+cat.name.first = "Scratchy";
 
-// console.log(cat.name);
+console.log(cat.name);
 
 //
 
 /*for...in loop*/
-// var cat = {
-//   name: {
-//     first: "Fluffy",
-//     last: "LeBeouf"
-//   },
-//   color: "White"
-// };
+var cat = {
+  name: {
+    first: "Fluffy",
+    last: "LeBeouf"
+  },
+  color: "White"
+};
 
-// // enumerable: false === cannot be serialized, enumerate, or see in object keys. You can still look at it
-// Object.defineProperty(cat, "name", { enumerable: false });
+// enumerable: false === cannot be serialized, enumerate, or see in object keys. You can still look at it
+Object.defineProperty(cat, "name", { enumerable: false });
 
-// for (var i in cat) {
-//   console.log(i + ": " + cat[i]);
-// }
+for (var i in cat) {
+  console.log(i + ": " + cat[i]);
+}
 
-// console.log(Object.keys(cat));
-// console.log(JSON.stringify(cat));
-// console.log(cat["name"]); // proof enumerable: false on property can still be seen
+console.log(Object.keys(cat));
+console.log(JSON.stringify(cat));
+console.log(cat["name"]); // proof enumerable: false on property can still be seen
 
 //
 
