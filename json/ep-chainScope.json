@@ -1,0 +1,21 @@
+[
+  {
+    "ProductInstance": "eInsight",
+    "RoleIsExclusive": true,
+    "IsRequired": false,
+    "RoleLevel": "Chain",
+    "RoleListPerChain": [
+      {
+        "ChainName": "KSL Resort",
+        "ChainID": "KSL",
+        "RoleList": ["Cendyn Admin", "Cendyn Product Success", "Admin"],
+        "AccessScope": [
+          {
+            "AccessScopeName": "Monarch Beach Resort",
+            "AccessScopeType": "Property"
+          }
+        ]
+      }
+    ]
+  }
+]

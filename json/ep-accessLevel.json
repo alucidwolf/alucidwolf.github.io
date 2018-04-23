@@ -1,0 +1,9 @@
+[
+  {
+    "ProductInstanceName": "eMenu",
+    "ProductInstance": "eMenu",
+    "RoleIsExclusive": true,
+    "IsRequired": false,
+    "RoleList": ["Cendyn Admin", "Cendyn Product Success", "Admin"]
+  }
+]

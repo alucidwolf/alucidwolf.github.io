@@ -1,0 +1,16 @@
+[
+  {
+    "ProductInstanceName": "eMenu",
+    "ProductInstance": "eMenu",
+    "RoleIsExclusive": true,
+    "IsRequired": false,
+    "RoleLevel": "Product",
+    "AccessScope": [
+      {
+        "AccessScopeName": "Hyatt Corporate",
+        "AccessScopeType": "Chain"
+      }
+    ],
+    "RoleList": ["Cendyn Admin", "Cendyn Product Success", "Admin"]
+  }
+]
