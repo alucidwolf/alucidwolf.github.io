@@ -1,5 +1,5 @@
 "use strict";
-
+var Promise = require("es6-promise").Promise;
 //setup urls for use later within array
 let countryURL =
   "https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/countries.json";
@@ -27,11 +27,11 @@ function output(text) {
 //log status as it is happening
 function getFile(file) {
   $(".loading").removeClass("hidden");
-  let promiseObj = new Promise((resolve, reject) => {
+  let promiseObj = new Promise(function(resolve, reject) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", file, true);
     xhr.send();
-    xhr.onreadystatechange = () => {
+    xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           console.log("xhr done successfully");
@@ -54,7 +54,7 @@ function parseFileData(data) {
   //this is where the json parse will br promisified
   countme++;
   console.log("start parsing " + countme);
-  return new Promise((resolve, reject) => {
+  return new Promise(function(resolve, reject) {
     try {
       resolve(JSON.parse(data));
     } catch (e) {

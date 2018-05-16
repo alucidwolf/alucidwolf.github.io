@@ -6,10 +6,11 @@
     url = "&" + url.substring(1);
   }
 
-  $("body").append(gdprHtml);
-  $.getScript(
+  var newUrl =
     "https://consent.trustarc.com/notice?domain=cendyn.com&c=teconsent&js=nj&noticeType=bb" +
-      url,
-    function() {}
-  );
+    url;
+
+  $("body").append(gdprHtml);
+
+  $.getScript(newUrl, function() {});
 })();
