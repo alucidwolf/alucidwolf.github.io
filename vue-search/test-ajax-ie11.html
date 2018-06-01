@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing Vue with Ajax and IE 11 Support</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ message }}</p>
+        <ul>
+            <li v-for='item in items'>
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: 'testing',
+                items: []
+            },
+            mounted: function(){
+                var self = this;
+                $.ajax({
+                    url: 'https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/countries.json',
+                    cache: false,
+                    method: 'GET',
+                    success: function(data){
+                        self.items = data;
+                    },
+                    error: function(error){
+                        console.log(error)
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
