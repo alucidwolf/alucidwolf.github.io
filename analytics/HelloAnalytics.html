@@ -35,18 +35,21 @@
               startDate: '2017-01-01',
               endDate: 'today'
             }],
-            metrics: [{
+            "metrics": [{
+              "expression": "ga:sessions"
+            }],
+            "dimensions": [{
+              "name": "ga:country"
+            }],
+            "pivots": [{
+              "dimensions": [{
+                "name": "ga:browser"
+              }],
+              "maxGroupCount": 3,
+              "startGroup": 3,
+              "metrics": [{
                 "expression": "ga:sessions"
-              },
-              {
-                "expression": "ga:sessionDuration"
-              },
-              {
-                "expression": "ga:timeOnPage"
-              }
-            ],
-            dimensions: [{
-              "name": "ga:city"
+              }]
             }]
           }]
         }
