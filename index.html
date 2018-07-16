@@ -24,6 +24,20 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122400045-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122400045-1');
+  </script>
+
+
   <link href="css/lucid.bs.min.css" rel="stylesheet">
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
@@ -353,7 +367,9 @@
       <div class="row">
         <div class="col-sm-6">
           <span class="copyright">Copyright &copy;
-            <script>new Date().getFullYear() && document.write(new Date().getFullYear());</script> - alucidwolf</span>
+            <script>
+              new Date().getFullYear() && document.write(new Date().getFullYear());
+            </script> - alucidwolf</span>
         </div>
         <div class="col-sm-6">
           <ul class="list-inline social-buttons">
