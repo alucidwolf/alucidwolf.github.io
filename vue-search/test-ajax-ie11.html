@@ -32,9 +32,12 @@
             mounted: function(){
                 var self = this;
                 $.ajax({
-                    url: 'https://rawgit.com/alucidwolf/alucidwolf.github.io/master/json/countries.json',
+                    url: 'https://translateapiqa.cendyn.com/api/Translation/en-us/Country',
                     cache: false,
                     method: 'GET',
+                    beforeSend: function(xhr){
+                        xhr.setRequestHeader('Authorize', 'Basic' + btoa('emenus:eM#nu$@P!User'))
+                    },
                     success: function(data){
                         self.items = data;
                     },
