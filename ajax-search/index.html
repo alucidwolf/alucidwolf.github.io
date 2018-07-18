@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX Search</title>
+    <link href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search</h1>
+        <input class="form-control" type="text" id="myInput" onkeyup="searchProperties()" placeholder="Search for names...">
+
+        <h2>List</h2>
+        <div id="myUL">
+            <div class="well">
+                <div>
+                    <ul class="properties">
+                        <li>
+                            <a href="#amresorts">Conrad Algarve (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Bangkok (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Cairo (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Centennial Singapore (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Dalian (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Dubai (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Dublin (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Fort Lauderdale Beach (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Hong Kong (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">Conrad Indianapolis (35)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="well">
+                <div>
+                    <ul class="properties">
+                        <li>
+                            <a href="#amresorts">Double Tree by Hilton Swindon Hotel (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Xiamen - Wuyuan Bay (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Aberdeen Treetops (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Alana - Waikiki Beach (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Alice Springs (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Amsterdam Centraal Station (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Austin (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Bloomington Minneapolis South (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Bristol North (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Cedar Rapids Convention Complex (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Chongqing North (35)</a>
+                        </li>
+                        <li>
+                            <a href="#amresorts">DoubleTree by Hilton Collinsville-St. Louis (35)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var searchProperties = debounce(updateSearch, 350);
+
+        function updateSearch() {
+            var input, filter, ul, li, a;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+
+            ul = document.getElementById('myUL');
+            li = ul.getElementsByTagName('li');
+
+            for (var i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName('a')[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                var context = this, args = arguments;
+                var later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            }
+        }
+    </script>
+</body>
+
+</html>
