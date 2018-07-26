@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Select Cascasde</title>
+    <link rel="stylesheet" href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1">
+    <link rel="stylesheet" href="vue-multiselect.css">
+
+</head>
+
+<body>
+    <img class="hide" src="https://uikits.cendyn.com/Areas/v002/Content/images/favicon-apple.png" alt="Cendyn Loading Icon" />
+    <script src="https://uikits.cendyn.com/Areas/v002/Scripts/Site/loading.js"></script>
+
+    <div class="container">
+        <!-- <div class="col-xs-6" id="app">
+            <h1>{{heading}}</h1>
+            <div class="form-group">
+                <label for="make">Make</label>
+                <select class="form-control" name="make" id="make" v-model="make">
+                    <option :value="null" disabled selected>Select Make</option>
+                    <option v-for="option in makes_options" v-bind:value="option.id">{{option.text}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="model">Model</label>
+                <select class="form-control" name="model" id="model" v-model="model">
+                    <option v-for="option in model_options[make]" v-bind:value="option.id" v-bind:key="option.id">{{option.text}}</option>
+                </select>
+            </div>
+        </div> -->
+        <div id="app2">
+            <div class="col-xs-6">
+                <h1>{{heading}}</h1>
+
+                <div class="form-group">
+                    <label for="suites">Suite</label>
+                    <multiselect
+                    v-model="suite"
+                    track-by="value"
+                    label="text"
+                    placeholder="Select a Suite"
+                    v-bind:options="suite_list"
+                    v-bind:searchable="false"
+                    v-bind:show-labels="false"
+                    @select="updateUserSuiteAccess">
+                    </multiselect>
+                </div>
+
+                <div class="form-group" v-for="collection in collections">
+
+                    <div v-if="!collection.Cascading">
+                        <label>{{collection.displayName}}</label>
+                        <multiselect
+                        v-model="suiteSelections[collection.displayName]"
+                        track-by="displayName"
+                        label="displayName"
+                        placeholder="Select an option"
+                        v-bind:options="collection_dropdowns[collection.displayName]"
+                        v-bind:show-labels="false">
+                        </multiselect>
+                    </div>
+
+                    <div class="row" v-if="collection.Cascading">
+
+                        <div class="col-sm-6">
+                            <label>{{collection.displayName}}</label>
+                            <multiselect
+                            v-model="make" track-by="id"
+                            label="text" placeholder="Select One"
+                            v-bind:options="makes_options"
+                            v-bind:searchable="false"
+                            v-bind:allow-empty="false"
+                            v-bind:show-labels="false"
+                            @select="dispatchAction">
+                            </multiselect>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label>&nbsp;</label>
+                            <multiselect
+                            v-model="model"
+                            track-by="text"
+                            label="text"
+                            placeholder="Select One"
+                            v-bind:options="model_options"
+                            v-bind:show-labels="false"
+                            v-bind:disabled="modelIsDisabled">
+                            </multiselect>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- <div class="form-group">
+                <label for="make2">Make</label>
+                <multiselect
+                v-model="make"
+                track-by="id"
+                label="text"
+                placeholder="Select One"
+                v-bind:options="makes_options"
+                v-bind:searchable="false"
+                @select="dispatchAction"
+                >
+                </multiselect>
+            </div>
+            <div class="form-group">
+                <label for="model2">Model</label>
+                <multiselect
+                v-model="model"
+                track-by="text"
+                label="text"
+                placeholder="Select One"
+                v-bind:options="model_options"
+                v-bind:disabled="modelIsDisabled"
+                >
+                </multiselect>
+            </div> -->
+
+                <button v-on:click="buildUserAccessList()" class="btn btn-primary">Build</button>
+            </div>
+            <div class="col-sm-6">
+                <h1>Output</h1>
+                <div class="well">
+                    <pre>{{output}}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
+    <script src="https://uikits.cendyn.com/Areas/v002/Plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="vue-2.5.16.js"></script>
+    <script src="vue-multiselect.js"></script>
+    <script src="adduser.js"></script>
+
+</body>
+
+</html>
