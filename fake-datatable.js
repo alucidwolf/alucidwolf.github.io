@@ -7,7 +7,7 @@
 	}, {
 		"id": "2",
 		"name": "Garrett Winters",
-		"position": "Accountant",",
+		"position": "Accountant",
 		"office": "Tokyo"
 	}, {
 		"id": "3",
@@ -22,7 +22,7 @@
 	}, {
 		"id": "5",
 		"name": "Airi Satou",
-		"position": "Accountant",",
+		"position": "Accountant",
 		"office": "Tokyo"
 	}, {
 		"id": "6",
@@ -127,7 +127,7 @@
 	}, {
 		"id": "26",
 		"name": "Gavin Joyce",
-		"position": "Developer",2",
+		"position": "Developer",
 		"office": "Edinburgh"
 	}, {
 		"id": "27",
@@ -157,7 +157,7 @@
 	}, {
 		"id": "32",
 		"name": "Suki Burks",
-		"position": "Developer",2",
+		"position": "Developer",
 		"office": "London"
 	}, {
 		"id": "33",
@@ -167,7 +167,7 @@
 	}, {
 		"id": "34",
 		"name": "Gavin Cortez",
-		"position": "Team Leader",,
+		"position": "Team Leader",
 		"office": "San Francisco"
 	}, {
 		"id": "35",
@@ -187,8 +187,8 @@
 	}, {
 		"id": "38",
 		"name": "Hope Fuentes",
-		"position": "Secretary",2",
-		"office": "San Francisc
+		"position": "Secretary",
+		"office": "San Francisco"
 	}, {
 		"id": "39",
 		"name": "Vivian Harrell",
@@ -202,7 +202,7 @@
 	}, {
 		"id": "41",
 		"name": "Jackson Bradshaw",
-		"position": "Director",26",
+		"position": "Director",
 		"office": "New York"
 	}, {
 		"id": "42",
@@ -222,7 +222,7 @@
 	}, {
 		"id": "45",
 		"name": "Thor Walton",
-		"position": "Developer",1",
+		"position": "Developer",
 		"office": "New York"
 	}, {
 		"id": "46",
@@ -267,8 +267,8 @@
 	}, {
 		"id": "54",
 		"name": "Jonas Alexander",
-		"position": "Developer",4",
-		"office": "San Francisc
+		"position": "Developer",
+		"office": "San Francisco"
 	}, {
 		"id": "55",
 		"name": "Shad Decker",
