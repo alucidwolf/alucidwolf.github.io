@@ -10,19 +10,19 @@
         "name": "Garrett Winters",
         "position": "Accountant",
         "office": "Tokyo",
-        "status": true
+        "status": false
     }, {
         "id": "3",
         "name": "Ashton Cox",
         "position": "Junior Technical Author",
         "office": "San Francisco",
-        "status": true
+        "status": false
     }, {
         "id": "4",
         "name": "Cedric Kelly",
         "position": "Senior Javascript Developer",
         "office": "Edinburgh",
-        "status": true
+        "status": false
     }, {
         "id": "5",
         "name": "Airi Satou",
