@@ -1,4 +1,4 @@
-[{
+{
 	"data": [{
 		"id": "1",
 		"name": "Tiger Nixon",
@@ -456,4 +456,4 @@
 		"office": "New York",
 		"extn": "4226"
 	}]
-}]
+}
