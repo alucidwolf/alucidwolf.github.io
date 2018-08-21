@@ -1,0 +1,16 @@
+{
+    "name": "testing",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --env dev --progress --profile --colors"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "vue": "^2.5.17",
+        "vuelidate": "^0.7.4"
+    }
+}
