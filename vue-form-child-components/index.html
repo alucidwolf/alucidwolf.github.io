@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Form w/ Child Components</title>
+    <link href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="app" class="container">
+        <h1>Vue Form w/ Child Components
+            <small>passing data to parent when submitting</small>
+        </h1>
+        <h2>Entire Form:</h2>
+        {{entireForm}}
+        <hr>
+
+        <form @submit.prevent="">
+            <dynamic-component v-for="(thing, index) in count" :key="index" :index="index" @user-input-changed="updateForm">
+            </dynamic-component>
+
+        </form>
+
+        <div v-for="i in count">
+            {{i}}
+        </div>
+
+        <button class="btn btn-primary" v-on:click="addItem">Increment Count</button>
+
+    </div>
+    <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
+    <script src="https://uikits.cendyn.com/Areas/v002/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
