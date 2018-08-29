@@ -42,22 +42,71 @@
                     menu: [{
                         text: 'Bacon Ipsum',
                         onclick: function () {
-                            $.ajax(
-                                    'https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/json/tinymce-content.json'
-                                )
-                                .done(function (data) {
-                                    let parsedData = JSON.parse(data);
-                                    console.log(parsedData);
-                                    let content = parsedData[0]["firstSavedContent"];
-                                    console.log(content);
-                                    editor.insertContent(content);
-                                })
-                                .fail(function () {
-                                    console.log('error');
-                                })
-                                .always(function () {
-                                    console.log('always');
-                                })
+                        let content = `<p>&nbsp;</p>
+                        <p align="center"><strong style="color: #000080;">WHY BIRMINGHAM?</strong></p>
+                        <p>The <strong>largest</strong> British City outside of London: - UK Central - <a target="_blank" href="http://birminghamtoolkit.com/">Find
+                                out more</a><br />
+                        </p>
+                        <p>International Airport: -<span> </span>18 <strong>US Destinations</strong>; 110&nbsp;Worldwide <a target="_blank"
+                                href="http://www.want2gothere.com/bhx/destinations/">destinations</a>&nbsp;</p>
+                        <p><a target="_blank" href="http://visitbirmingham.com/what-to-do/attractions/">Attractions</a>:&nbsp;Stratford
+                            &#8211;upon- Avon (Birthplace of <strong>William Shakespeare</strong>) Edgbaston Cricket Ground, Birmingham Library
+                            (Europe&#8217;s Largest) Barclaycard Arena (host of the 2016 Davis Cup)</p>
+                        <p>Reknowned for <strong><a target="_blank" href="http://www.meetbirmingham.com/">Business Tourism</a></strong>:&nbsp;National
+                            Exhibition Centre, Resort World entertainment complex</p>
+                        <p>Did you know? Birmingham has more canals than <strong>Venice.</strong></p>
+                        <p>A London style Hotel in the provinces, <strong>without the</strong> London prices and with ease of access on a
+                            secure site. - <a target="_blank" href="http://connectplusathiltonworldwide.com/property/hilton-birmingham-metropole-hotel/">Discover
+                                Hilton Birmingham Metropole</a>&nbsp;</p>
+
+                        <p align="center"><strong><span style="color: #000080;">WHY HILTON BIRMINGHAM METROPOLE?</span></strong></p>
+                        <p>62904&nbsp;&nbsp; Total square feet of event space</p>
+                        <p>2000&nbsp;&nbsp; &nbsp; Successful events hosted&nbsp;each year</p>
+                        <p>790&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Guest rooms and suites</p>
+                        <p>33&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Flexible event space</p>
+                        <p>3&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Dining experiences</p>
+                        <p>1&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; LivingWell Health Club and The Ocean Rooms Spa</p>
+                        <p>&nbsp;</p>
+                        <p><span style="font-size:12.0pt;line-height:115%;font-family: " times="" new="" roman","serif";="" roman";"="">Easily
+                                accessible by rail, road and air networks and located next to the National Exhibition Centre, we are at the hub
+                                that connects Birmingham International Airport with the International Railway station with the M42, M6 and M40.
+                                Regular complimentary transport ensures your guests will only be minutes from the airport and railway station.<br />
+                                <br />
+                                Hilton Birmingham Metropole sets the stage for business events with impact and social occasions that are
+                                memorable. Our prime location allows you and your delegates to explore some of the best there is to see in the
+                                United Kingdom, from the bustling city centre of Birmingham, to historic locations such as Warwick Castle or
+                                even the famous Cadbury World.<br />
+                            </span>&nbsp; </p>
+                        <p><span style="font-size:12.0pt;line-height:115%;font-family: " times="" new="" roman","serif";="" roman";"="">Where
+                                connections are made and partnerships forged. Where productive days lead to constructive results. And where our
+                                expertise is your guarantee of success. Where it all happens: Hilton Birmingham Metropole &#8211; the heart of
+                                exceptional service in the heart of England, and in one of the most accessible cities in Europe. This is where
+                                a passionate and creative team make the incredible happen every day, and make your conference, meeting or
+                                event, the best one ever.</span></p>
+                        <p><span id="ctl00_ctl00_MainContent_MainContent_rptParaType_ctl00_rptParagraphs_ctl01_lblContents"><span id="ctl00_ctl00_MainContent_MainContent__dataListRB_ctl01_lbContent"><br />
+                                </span></span></p>
+                        <div>Please take a moment to review the links above for a comprehensive overview of our hotel offerings.</div>
+                        <p>&nbsp;</p>`
+                            editor.insertContent(content);
+
+                            // $.ajax(
+                            //         'https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/json/tinymce-content.json'
+                            //     )
+                            //     .done(function (data) {
+                            //         let parsedData = JSON.parse(data);
+                            //         console.log(parsedData);
+                            //         let content = parsedData[0]["firstSavedContent"];
+                            //         editor.dom.add(tinymce.activeEditor.getBody(),
+                            //             'p', {
+                            //                 title: 'my title'
+                            //             }, content)
+                            //     })
+                            //     .fail(function () {
+                            //         console.log('error');
+                            //     })
+                            //     .always(function () {
+                            //         console.log('always');
+                            //     })
                         }
                     }]
                 })
