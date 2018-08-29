@@ -29,15 +29,15 @@
     <script>
         tinymce.init({
             selector: '#mytextarea',
-            toolbar: 'mybutton',
+            toolbar: 'storedcontent bold italic underline alignleft aligncenter alignright alignjustify',
             menubar: false,
             setup: function (editor) {
-                editor.addButton('mybutton', {
+                editor.addButton('storedcontent', {
                     type: 'menubutton',
-                    text: 'My Button',
+                    text: 'Stored Content',
                     icon: false,
                     menu: [{
-                        text: 'Menu item 1',
+                        text: 'Bacon Ipsum',
                         onclick: function () {
                             $.ajax(
                                     'https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/json/tinymce-content.json'
