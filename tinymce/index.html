@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tiny MCE Stored Content</title>
+    <link href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <img style="display:none" src="https://uikits.cendyn.com/Areas/v002/Content/images/favicon-apple.png" alt="Cendyn Loading Icon" />
+    <script src="https://uikits.cendyn.com/Areas/v002/Scripts/Site/loading.js"></script>
+
+    <div class="container">
+
+        <form method="post">
+            <textarea id="mytextarea">Hello, World!</textarea>
+        </form>
+
+    </div>
+
+    <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
+    <script src="https://uikits.cendyn.com/Areas/v002/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=epl9bsnh0su49l4kfufivzvkkbu67kjkfzgprcpc6xpqsloh"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            toolbar: 'mybutton',
+            menubar: false,
+            setup: function (editor) {
+                editor.addButton('mybutton', {
+                    type: 'menubutton',
+                    text: 'My Button',
+                    icon: false,
+                    menu: [{
+                        text: 'Menu item 1',
+                        onclick: function () {
+                            $.ajax(
+                                    'https://raw.githubusercontent.com/alucidwolf/alucidwolf.github.io/master/json/tinymce-content.json'
+                                )
+                                .done(function (data) {
+                                    let parsedData = JSON.parse(data);
+                                    console.log(parsedData);
+                                    let content = parsedData[0]["firstSavedContent"];
+                                    console.log(content);
+                                    editor.insertContent(content);
+                                })
+                                .fail(function () {
+                                    console.log('error');
+                                })
+                                .always(function () {
+                                    console.log('always');
+                                })
+                        }
+                    }]
+                })
+            }
+        });
+
+    </script>
+</body>
+
+</html>
