@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tiny MCE Trigger on Click</title>
+    <link href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1" rel="stylesheet">
+    <style lang="text/css">
+        .is-editable {
+            border: 1px solid transparent;
+        }
+
+        .is-editable:hover {
+            border: 1px dashed lightskyblue
+        }
+
+        .is-editable.mce-content-body {
+            border-style: solid
+        }
+
+        .is-editable.mce-content-body.mce-edit-focus {
+            border: 1px solid red
+        }
+
+        span.mce-branding {
+            display: none
+        }
+
+        .mce-content-body {
+            line-height: 1.5 !important
+        }
+
+    </style>
+</head>
+
+<body>
+    <img style="display:none" src="https://uikits.cendyn.com/Areas/v002/Content/images/favicon-apple.png" alt="Cendyn Loading Icon" />
+    <script src="https://uikits.cendyn.com/Areas/v002/Scripts/Site/loading.js"></script>
+    <div class="container">
+        <h1>Tiny MCE <small>on click with custom menu button for stored content and view of exported, serialized html</small></h1>
+
+        <div id="editableTiny-01" class="is-editable" onclick="activateTinyEditor(this)">
+            <p>Thank you for considering the Hilton Brighton Metropole hotel for your upcoming event. The Hilton
+                Brighton Metropole
+                hotel is the South of England’s largest residential conference centre, offering a diverse range of
+                exhibition
+                halls, function rooms, and elegant suites ideal for corporate or social events. Situated in a red-brick
+                Victorian
+                built hotel circa 1890, we provide exceptional service and technological amenities while still
+                celebrating the
+                location’s vibrant heritage. Let our first-class facilities and experienced planners transform your
+                next event into
+                an unforgettable occasion.</p>
+        </div>
+
+        <div id="editableTiny-02" class="is-editable" onclick="activateTinyEditor(this)">
+            <p>Thanks to our prime location on Brighton’s seafront, most of the city’s local attractions, restaurants,
+                and
+                nightlife are just a short stroll away. Whether you want to explore the exquisite Royal Pavilion or
+                enjoy an
+                afternoon shopping at The Lanes between meetings, the best of Brighton is just beyond our doors.</p>
+        </div>
+
+        <div id="editableTiny-03" class="is-editable" onclick="activateTinyEditor(this)">
+            <p>Situated just 49 minutes from Central London, 30 minutes from Gatwick International Airport and in close
+                proximity
+                to the M25, our excellent location is convenient by road, rail and air. Hilton Brighton Metropole hotel
+                features
+                the largest meeting space in Brighton. Whether you are planning a sales conference, business meeting or
+                hosting an
+                exclusive banquet, your attendees will adore the Victorian touches which blend seamlessly with our
+                modern comforts
+                and friendly service. Between meetings, your group can explore Brighton attractions such as the British
+                Airways
+                i360, Royal Pavilion and The Lanes shopping area, or sit back and enjoy all of our modern on-site
+                amenities.
+                Brighton is a city that unites culture and history with a vibrant array of entertainment and nightlife,
+                the
+                ultimate setting to mix business with leisure.</p>
+        </div>
+
+        <div id="editableTiny-04" class="is-editable" onclick="activateTinyEditor(this)">
+            <p>Guest rooms include large, opening windows that offer city or sea views as well as convenient amenities
+                designed to
+                help you relax or get some work done. Unwind in a comfortable easy chair while you enjoy your favourite
+                programme
+                on TV or prepare for a meeting at the executive desk with high speed Internet access. Dine on à la
+                carte European
+                cuisine under the 1890 At The Met’s ornate chandeliers, sample a cream tea in an elegant setting of The
+                Waterhouse
+                Bar & Terrace. Guests interested in maintaining a healthy lifestyle can stop by the LivingWell Leisure
+                Club, swim a
+                few laps in the heated indoor pool, or unwind in the sauna, steam room, or Jacuzzi®. Schmoo by the Sea
+                Spa offers
+                an array of pampering treatments as well as relaxation rooms. Our friendly Reception team can also
+                arrange
+                reservations for team building activities and excursions for your entire group.</p>
+        </div>
+
+    </div>
+    <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
+    <script src="https://uikits.cendyn.com/Areas/v002/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=epl9bsnh0su49l4kfufivzvkkbu67kjkfzgprcpc6xpqsloh"></script>
+
+    <script src="onclick.js"></script>
+
+</body>
+
+</html>
