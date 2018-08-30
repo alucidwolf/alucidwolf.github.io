@@ -23,6 +23,11 @@ function activateTinyEditor(el) {
             toolbar: 'storedcontent newdocument bold italic underline',
             menubar: false,
             inline: true,
+            mobile: {
+                theme: 'mobile',
+                toolbar: ['undo', 'bold']
+            },
+            // custom menu button for stored content
             setup: function (editor) {
                 editor.addButton('storedcontent', {
                     type: 'menubutton',
@@ -115,10 +120,16 @@ function activateTinyEditor(el) {
                 })
             },
             init_instance_callback: function (editor) {
-                editor.on('blur', function (e) {
-                    console.log('Element Clicked: ', e.target.id);
-                    var editorTinyToRemove = "#" + e.target.id;
-                    tinymce.remove(editorTinyToRemove)
+                // remove editor when it loses focus
+                // editor.on('blur', function (e) {
+                //     console.log('Element Clicked: ', e.target.id);
+                //     var editorTinyToRemove = "#" + e.target.id;
+                //     tinymce.remove(editorTinyToRemove)
+                // })
+
+                // get content from editor when it loses focus
+                editor.on('GetContent', function (e) {
+                    console.log(e.content);
                 })
             }
         })
