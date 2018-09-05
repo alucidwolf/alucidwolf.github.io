@@ -20,6 +20,9 @@
             <blog-post v-on:enlarge-text="onEnlargeText" v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
         </div>
 
+        <custom-input v-model="searchText"></custom-input>
+        {{searchText}}
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
