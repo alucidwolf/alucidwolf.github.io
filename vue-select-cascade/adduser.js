@@ -1,4 +1,13 @@
 (function () {
+
+    Vue.component('todo-item', {
+        template: `<li>
+        {{title}}
+        <button class="btn btn-primary btn-xs" v-on:click="$emit('remove')">Remove</button>
+        </li>`,
+        props: ['title']
+    });
+
     var addUserVue = new Vue({
         el: '#app',
         data: {
@@ -6,49 +15,49 @@
             make: null,
             model: null,
             makes_options: [{
-                    text: "Honda",
+                    text: "Region Property 1",
                     id: 1
                 },
                 {
-                    text: "Toyota",
+                    text: "Region Property 2",
                     id: 2
                 },
                 {
-                    text: "Nissan",
+                    text: "Region Property 3",
                     id: 3
                 },
                 {
-                    text: "Suzuki",
+                    text: "Region Property 4",
                     id: 4
                 }
             ],
             model_options: {
                 1: [{
-                    text: 'Accord',
+                    text: 'NA',
                     id: 1
                 }, {
-                    text: 'Civic',
+                    text: 'EU',
                     id: 2
                 }],
                 2: [{
-                    text: 'Corolla',
+                    text: 'NA',
                     id: 1
                 }, {
-                    text: 'Hi Ace',
+                    text: 'EU',
                     id: 2
                 }],
                 3: [{
-                    text: 'Altima',
+                    text: 'NA',
                     id: 1
                 }, {
-                    text: 'Zuke',
+                    text: 'EU',
                     id: 2
                 }],
                 4: [{
-                    text: 'Alto',
+                    text: 'NA',
                     id: 1
                 }, {
-                    text: 'Swift',
+                    text: 'EU',
                     id: 2
                 }]
             }
@@ -61,12 +70,25 @@
         },
         el: '#app2',
         data: {
+            newTodoText: '',
+            todos: [{
+                id: 1,
+                title: 'Do the dishes',
+            }, {
+                id: 2,
+                title: 'Take out the trash'
+            }, {
+                id: 3,
+                title: 'Mow the lawn'
+            }],
+            nextTodoId: 4,
+
             modelIsDisabled: true,
             heading: 'Vue Multiselect Library',
-            make: null,
-            makes_options: [],
-            model: null,
-            model_options: [],
+            region_option_selected: null,
+            region_options: [],
+            region_selected: null,
+            regions: [],
             suite: [],
             suite_list: [],
             collections: [],
@@ -75,56 +97,63 @@
             output: null
         },
         methods: {
+            addNewTodo: function () {
+                this.todos.push({
+                    id: this.nextTodoId++,
+                    title: this.newTodoText
+                })
+                this.newTodoText = ''
+            },
             dispatchAction: function (actionName) {
                 var self = this;
-                console.log(actionName.text);
+                //console.log(actionName.text);
 
                 var sameplData = [{
-                    make: 'Honda',
-                    text: 'Accord',
+                    region_option_selected: 'Region Property 1',
+                    text: 'NA',
                     id: 1
                 }, {
-                    make: 'Honda',
-                    text: 'Civic',
+                    region_option_selected: 'Region Property 1',
+                    text: 'EU',
                     id: 2
                 }, {
-                    make: 'Toyota',
-                    text: 'Corolla',
+                    region_option_selected: 'Region Property 2',
+                    text: 'NA',
                     id: 1
                 }, {
-                    make: 'Toyota',
-                    text: 'Hi Ace',
+                    region_option_selected: 'Region Property 2',
+                    text: 'EU',
                     id: 2
                 }, {
-                    make: 'Nissan',
-                    text: 'Altima',
+                    region_option_selected: 'Region Property 3',
+                    text: 'NA',
                     id: 1
                 }, {
-                    make: 'Nissan',
-                    text: 'Zuke',
+                    region_option_selected: 'Region Property 3',
+                    text: 'EU',
                     id: 2
                 }, {
-                    make: 'Suzuki',
-                    text: 'Alto',
+                    region_option_selected: 'Region Property 4',
+                    text: 'NA',
                     id: 1
                 }, {
-                    make: 'Suzuki',
-                    text: 'Swift',
+                    region_option_selected: 'Region Property 4',
+                    text: 'EU',
                     id: 2
                 }];
 
                 var newItems = sameplData.filter(function (item) {
-                    return item.make === actionName.text;
+                    return item.region_option_selected === actionName.text;
                 });
 
-                self.model_options = newItems;
+                self.regions = newItems;
                 self.modelIsDisabled = false;
 
-                console.log(self.model_options);
+                //console.log(self.regions);
             },
             updateUserSuiteAccess: function (suiteValue) {
                 var self = this;
-                console.log(suiteValue.value);
+                //console.log(suiteValue.value);
 
                 switch (suiteValue.value) {
                     case 'ALL':
@@ -151,62 +180,74 @@
                         ];
                         self.collection_dropdowns = {
                             'Chains': [{
-                                    displayName: 'Hotel1',
-                                    value: 'test1'
+                                    displayName: 'Chain 1',
+                                    value: 'test1',
+                                    outputLocation: 'Chain'
                                 },
                                 {
-                                    displayName: 'Hotel2',
-                                    value: 'test2'
+                                    displayName: 'Chain 2',
+                                    value: 'test2',
+                                    outputLocation: 'Chain'
                                 },
                                 {
-                                    displayName: 'Hotel3',
-                                    value: 'test3'
+                                    displayName: 'Chain 3',
+                                    value: 'test3',
+                                    outputLocation: 'Chain'
                                 }
                             ],
                             'Brands': [{
-                                    displayName: 'Hotel4',
-                                    value: 'test4'
+                                    displayName: 'Brand 1',
+                                    value: 'test4',
+                                    outputLocation: 'Brand'
                                 },
                                 {
-                                    displayName: 'Hotel5',
-                                    value: 'test5'
+                                    displayName: 'Brand 2',
+                                    value: 'test5',
+                                    outputLocation: 'Brand'
                                 },
                                 {
-                                    displayName: 'Hotel6',
-                                    value: 'test6'
+                                    displayName: 'Brand 3',
+                                    value: 'test6',
+                                    outputLocation: 'Brand'
                                 }
                             ],
                             'Properties': [{
-                                    displayName: 'Hotel7',
-                                    value: 'test7'
+                                    displayName: 'Property 1',
+                                    value: 'test7',
+                                    outputLocation: 'Property'
                                 },
                                 {
-                                    displayName: 'Hotel8',
-                                    value: 'test8'
+                                    displayName: 'Propert 2',
+                                    value: 'test8',
+                                    outputLocation: 'Property'
                                 },
                                 {
-                                    displayName: 'Hotel9',
-                                    value: 'test9'
+                                    displayName: 'Property 3',
+                                    value: 'test9',
+                                    outputLocation: 'Property'
                                 }
                             ],
                             'Regions': [{
-                                    displayName: 'Hotel10',
-                                    value: 'test10'
+                                    displayName: 'Region Property 1',
+                                    value: 'test10',
+                                    outputLocation: 'Region'
                                 },
                                 {
-                                    displayName: 'Hotel11',
-                                    value: 'test11'
+                                    displayName: 'Region Property 2',
+                                    value: 'test11',
+                                    outputLocation: 'Region'
                                 },
                                 {
-                                    displayName: 'Hotel12',
-                                    value: 'test12'
+                                    displayName: 'Region Property 3',
+                                    value: 'test12',
+                                    outputLocation: 'Region'
                                 }
                             ]
                         }
                         break;
                     case 'CRM':
                         self.collections = [{
-                            displayName: 'Make / Models',
+                            displayName: 'region_option_selected / Models',
                             Cascading: true
                         }];
                         break;
@@ -229,42 +270,51 @@
                         ];
                         self.collection_dropdowns = {
                             'Chains': [{
-                                    displayName: 'Hotel1',
-                                    value: 'test1'
+                                    displayName: 'Chain 1',
+                                    value: 'test1',
+                                    outputLocation: 'Chain'
                                 },
                                 {
-                                    displayName: 'Hotel2',
-                                    value: 'test2'
+                                    displayName: 'Chain 2',
+                                    value: 'test2',
+                                    outputLocation: 'Chain'
                                 },
                                 {
-                                    displayName: 'Hotel3',
-                                    value: 'test3'
+                                    displayName: 'Chain 3',
+                                    value: 'test3',
+                                    outputLocation: 'Chain'
                                 }
                             ],
                             'Brands': [{
-                                    displayName: 'Hotel4',
-                                    value: 'test4'
+                                    displayName: 'Brand 1',
+                                    value: 'test4',
+                                    outputLocation: 'Brand'
                                 },
                                 {
-                                    displayName: 'Hotel5',
-                                    value: 'test5'
+                                    displayName: 'Brand 2',
+                                    value: 'test5',
+                                    outputLocation: 'Brand'
                                 },
                                 {
-                                    displayName: 'Hotel6',
-                                    value: 'test6'
+                                    displayName: 'Brand 3',
+                                    value: 'test6',
+                                    outputLocation: 'Brand'
                                 }
                             ],
                             'Properties': [{
-                                    displayName: 'Hotel7',
-                                    value: 'test7'
+                                    displayName: 'Property 1',
+                                    value: 'test7',
+                                    outputLocation: 'Property'
                                 },
                                 {
-                                    displayName: 'Hotel8',
-                                    value: 'test8'
+                                    displayName: 'Propert 2',
+                                    value: 'test8',
+                                    outputLocation: 'Property'
                                 },
                                 {
-                                    displayName: 'Hotel9',
-                                    value: 'test9'
+                                    displayName: 'Property 3',
+                                    value: 'test9',
+                                    outputLocation: 'Property'
                                 }
                             ]
                         }
@@ -273,21 +323,25 @@
             },
             init: function () {
                 var self = this;
-                self.makes_options = [{
-                        text: "Honda",
-                        id: 1
+                self.region_options = [{
+                        text: "Region Property 1",
+                        id: 1,
+                        outputLocation: 'Region Property'
                     },
                     {
-                        text: "Toyota",
-                        id: 2
+                        text: "Region Property 2",
+                        id: 2,
+                        outputLocation: 'Region Property'
                     },
                     {
-                        text: "Nissan",
-                        id: 3
+                        text: "Region Property 3",
+                        id: 3,
+                        outputLocation: 'Region Property'
                     },
                     {
-                        text: "Suzuki",
-                        id: 4
+                        text: "Region Property 4",
+                        id: 4,
+                        outputLocation: 'Region Property'
                     }
                 ];
 
@@ -305,23 +359,47 @@
                     }
                 ];
 
-                console.log('init vue data');
+                //console.log('init vue data');
             },
             buildUserAccessList: function () {
                 var self = this;
-                self.output = [];
-                //var chains = self.suiteSelections['Chains'];
+                self.output = {
+                    'Chains': [],
+                    'Brands': [],
+                    'Properties': [],
+                    'Region Property': [],
+                    'Regions': []
+                };
+
+                console.log(self.suiteSelections);
+
+                // Loop through each property inside object ...
                 for (var prop in self.suiteSelections) {
-                    self.output.push(self.suiteSelections[prop]);
+                    var insideProp = self.suiteSelections[prop];
+
+                    // ... inside each object extract the name and push into output array
+                    for (var p in insideProp) {
+                        switch (insideProp[p].outputLocation) {
+                            case 'Chain':
+                                self.output['Chains'].push(insideProp[p].displayName);
+                                break;
+                            case 'Brand':
+                                self.output['Brands'].push(insideProp[p].displayName);
+                                break;
+                            case 'Property':
+                                self.output['Properties'].push(insideProp[p].displayName);
+                                break;
+                        }
+                    }
+
                 }
-                // var chaintestextract = chaintest.map(function (item) {
-                //     return item.displayName;
-                // })
-                //console.log(self.suiteSelections);
-                //console.log(chains);
-                //console.log(chaintest);
-                self.output.push(self.make);
-                self.output.push(self.model);
+
+                self.output['Region Property'].push(self.region_option_selected.text);
+
+                for (var i in self.region_selected) {
+                    self.output['Regions'].push(self.region_selected[i].text);
+                }
+
             }
         }
     })
