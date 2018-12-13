@@ -8,223 +8,200 @@
   <title>Document</title>
   <link href="https://uikits.cendyn.com/v002/Site/CSS?v=1.1" rel="stylesheet">
 
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body.open-the-nav {
+      overflow: hidden;
+    }
+
+    .nav-wrapper {
+      background: skyblue;
+      height: 100vh;
+    }
+
+    .open-the-nav .nav-wrapper {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .open-the-nav .bottom {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .bottom,
+    .middle,
+    .top,
+    .nav-wrapper {
+      position: fixed;
+      overflow-y: auto;
+      transform: translate3d(-100%, 0, 0);
+      width: 320px;
+      transition: all .3s ease-in-out;
+    }
+
+    .bottom,
+    .middle,
+    .top {
+      margin-top: 50px;
+      height: calc(100vh - 50px);
+    }
+
+    .bottom {
+      background: red;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .middle {
+      background: orange;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .middle.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .top {
+      background: yellow;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+
+    .top.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .button-controls {
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .nav-wrapper {
+      position: fixed;
+    }
+
+    .scroll-wrapper {
+      max-height: 100%;
+    }
+
+    .nav-outer{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+  </style>
+
 </head>
 
-<style>
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-  }
-
-  .bottom,
-  .middle,
-  .top {
-    height: 100vh;
-    position: fixed;
-    overflow-y: auto;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  .bottom.open,
-  .middle.open,
-  .top.open {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .bottom {
-    width: 300px;
-    background: red;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  .middle {
-    width: 200px;
-    background: orange;
-    top: 0;
-    left: 0;
-    z-index: 2;
-  }
-
-  .top {
-    width: 100px;
-    background: yellow;
-    top: 0;
-    left: 0;
-    z-index: 3;
-  }
-
-  .button-controls {
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
-
-</style>
-
 <body>
-  <div style="margin-left: 200px;">
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-    <h1>title for spacing</h1>
-  </div>
-  <div>
-    <div class="bottom">
-      <div class="scrollbar-macosx">
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-      </div>
-    </div>
-    <div class="middle">
-      <div class="scrollbar-macosx">
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-      </div>
-    </div>
-    <div class="top">
-      <div class="scrollbar-macosx">
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-        <h1>title for spacing</h1>
-      </div>
+
+  <div class="container">
+    <h1>title for spacing title for spacing title for spacing title for spacing1</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing2</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing3</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing4</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing5</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing6</h1>
+    <div>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
     </div>
   </div>
 
   <div class="button-controls">
-    <button class="btn btn-primary open-bottom">Open Bottom</button><br><br>
-    <button class="btn btn-primary open-middle">Open Middle</button><br><br>
-    <button class="btn btn-primary open-top">Open Top</button><br><br>
-    <button class="btn btn-primary close-bottom">Close Bottom</button><br><br>
-    <button class="btn btn-primary close-middle">Close Middle</button><br><br>
-    <button class="btn btn-primary close-top">Close Top</button><br><br>
-    <button class="btn btn-primary close-all">Close All</button>
+    <button class="btn btn-primary open-nav">toggle nav</button>
+  </div>
+
+  <div class="nav-outer">
+    <div class="nav-wrapper">
+      <div class="nav-header">
+        <div class="pull-left menu-back-control">
+          menu</div>
+        <div class="pull-right close-nav-completely">X
+        </div>
+      </div>
+
+      <!-- BEGIN FIRST LEVEL NAV SECTIONS -->
+      <div class="bottom menu-container">
+        <div class="scrollbar-macosx">
+          <h1>Home</h1>
+          <h1 class="has-children">Information<span> -></span></h1>
+          <h1 class="has-children">Food &amp; Beverage<span> -></span></h1>
+        </div>
+      </div>
+      <!-- END FIRST LEVEL NAV SECTIONS -->
+
+      <!-- BEGIN SECOND LEVEL NAV SECTIONS -->
+      <div class="middle menu-container">
+        <div class="scrollbar-macosx">
+          <h5>Information</h5>
+          <h1>bell services</h1>
+          <h1 class="has-children">corp social responsibility<span> -></span></h1>
+          <h1 class="has-children">fax numbers<span> -></span></h1>
+        </div>
+      </div>
+      <div class="middle menu-container">
+        <div class="scrollbar-macosx">
+          <h5>Food &amp; Beverage</h5>
+          <h1>food 1</h1>
+          <h1 class="has-children">food 2<span> -></span></h1>
+          <h1 class="has-children">food 3<span> -></span></h1>
+        </div>
+      </div>
+      <!-- END SECOND LEVEL NAV SECTIONS -->
+
+      <!-- BEGIN THIRD LEVEL NAV SECTIONS -->
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>corp social responsibility</h5>
+          <h1>corp 1</h1>
+          <h1>corp 2</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>fax numbers</h5>
+          <h1>fax 1</h1>
+          <h1>fax 2</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>food 2</h5>
+          <h1>food 2a</h1>
+          <h1>food 2b</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>food 3</h5>
+          <h1>food 3aa</h1>
+          <h1>food 3bb</h1>
+        </div>
+      </div>
+      <!-- END THIRD LEVEL NAV SECTIONS -->
+
+    </div>
   </div>
 
   <script src="https://uikits.cendyn.com/Scripts/jquery-1.12.4.js"></script>
@@ -232,33 +209,39 @@
 
   <script>
     (function() {
-      $(".open-bottom").on("click", function() {
-        $(".bottom").addClass("open");
-      });
-      $(".open-middle").on("click", function() {
-        $(".middle").addClass("open");
-      });
-      $(".open-top").on("click", function() {
-        $(".top").addClass("open");
+      $(".open-nav").on("click", function() {
+        $("body").toggleClass("open-the-nav");
       });
 
-      $(".close-bottom").on("click", function() {
-        $(".bottom").removeClass("open");
-      });
-      $(".close-middle").on("click", function() {
-        $(".middle").removeClass("open");
-      });
-      $(".close-top").on("click", function() {
-        $(".top").removeClass("open");
+      $(".has-children").on("click", function() {
+        var $that = $(this);
+        var textArr = ($(this).text().split("-"));
+        var textOnly = textArr[0].trim();
+
+        setTimeout(function() {
+          $that.parents(".scrollbar-macosx").scrollTop(0);
+        }, 500);
+
+        $("h5:contains('" + textOnly + "')").parents(".menu-container").addClass("open");
       });
 
-      $(".close-all").on("click", function() {
-        $(".bottom").removeClass("open")
-        $(".middle").removeClass("open")
-        $(".top").removeClass("open")
+      $(".menu-back-control").on("click", function() {
+        // check top, then middle, then if none close nav
+        if ($(".top").hasClass("open")) {
+          $(".top").removeClass("open");
+        } else if ($(".middle").hasClass("open")) {
+          $(".middle").removeClass("open");
+        } else {
+          $("body").removeClass("open-the-nav");
+        }
       });
 
-      //$('.scrollbar-macosx').scrollbar();
+      $(".close-nav-completely").on("click", function() {
+        $("body").removeClass("open-the-nav");
+        $(".menu-container").removeClass("open");
+      });
+
+      $('.scrollbar-macosx').scrollbar();
     }());
 
   </script>
