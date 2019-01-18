@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body.open-the-nav {
+      overflow: hidden;
+    }
+
+    .nav-wrapper {
+      background: skyblue;
+      height: 100vh;
+    }
+
+    .open-the-nav .nav-wrapper {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .open-the-nav .bottom {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .bottom,
+    .middle,
+    .top,
+    .nav-wrapper {
+      position: fixed;
+      overflow-y: auto;
+      transform: translate3d(-100%, 0, 0);
+      width: 320px;
+      transition: all .3s ease-in-out;
+    }
+
+    .bottom,
+    .middle,
+    .top {
+      margin-top: 50px;
+      height: calc(100vh - 50px);
+    }
+
+    .bottom {
+      background: red;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .middle {
+      background: orange;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .middle.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .top {
+      background: yellow;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+
+    .top.open {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .button-controls {
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .nav-wrapper {
+      position: fixed;
+    }
+
+    .scroll-wrapper {
+      max-height: 100%;
+    }
+
+    .nav-outer {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /*************** SCROLLBAR BASE CSS ***************/
+    .scroll-wrapper {
+      overflow: hidden !important;
+      padding: 0 !important;
+      position: relative;
+    }
+
+    .scroll-wrapper>.scroll-content {
+      border: none !important;
+      box-sizing: content-box !important;
+      height: auto;
+      left: 0;
+      margin: 0;
+      max-height: none;
+      max-width: none !important;
+      overflow: scroll !important;
+      padding: 0;
+      position: relative !important;
+      top: 0;
+      width: auto !important;
+    }
+
+    .scroll-wrapper>.scroll-content::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+
+    .scroll-element {
+      display: none;
+    }
+
+    .scroll-element,
+    .scroll-element div {
+      box-sizing: content-box;
+    }
+
+    .scroll-element.scroll-x.scroll-scrollx_visible,
+    .scroll-element.scroll-y.scroll-scrolly_visible {
+      display: block;
+    }
+
+    .scroll-element .scroll-bar,
+    .scroll-element .scroll-arrow {
+      cursor: default;
+    }
+
+    .scroll-textarea {
+      border: 1px solid #cccccc;
+      border-top-color: #999999;
+    }
+
+    .scroll-textarea>.scroll-content {
+      overflow: hidden !important;
+    }
+
+    .scroll-textarea>.scroll-content>textarea {
+      border: none !important;
+      box-sizing: border-box;
+      height: 100% !important;
+      margin: 0;
+      max-height: none !important;
+      max-width: none !important;
+      overflow: scroll !important;
+      outline: none;
+      padding: 2px;
+      position: relative !important;
+      top: 0;
+      width: 100% !important;
+    }
+
+    .scroll-textarea>.scroll-content>textarea::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+
+    /*************** SIMPLE OUTER SCROLLBAR ***************/
+    .scrollbar-outer>.scroll-element,
+    .scrollbar-outer>.scroll-element div {
+      border: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .scrollbar-outer>.scroll-element {
+      background-color: #ffffff;
+    }
+
+    .scrollbar-outer>.scroll-element div {
+      display: block;
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-x {
+      bottom: 0;
+      height: 12px;
+      left: 0;
+      width: 100%;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-y {
+      height: 100%;
+      right: 0;
+      top: 0;
+      width: 12px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-x .scroll-element_outer {
+      height: 8px;
+      top: 2px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-y .scroll-element_outer {
+      left: 2px;
+      width: 8px;
+    }
+
+    .scrollbar-outer>.scroll-element .scroll-element_outer {
+      overflow: hidden;
+    }
+
+    .scrollbar-outer>.scroll-element .scroll-element_track {
+      background-color: #eeeeee;
+    }
+
+    .scrollbar-outer>.scroll-element .scroll-element_outer,
+    .scrollbar-outer>.scroll-element .scroll-element_track,
+    .scrollbar-outer>.scroll-element .scroll-bar {
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+    }
+
+    .scrollbar-outer>.scroll-element .scroll-bar {
+      background-color: #d9d9d9;
+    }
+
+    .scrollbar-outer>.scroll-element .scroll-bar:hover {
+      background-color: #c2c2c2;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-draggable .scroll-bar {
+      background-color: #919191;
+    }
+
+    /* scrollbar height/width & offset from container borders */
+    .scrollbar-outer>.scroll-content.scroll-scrolly_visible {
+      left: -12px;
+      margin-left: 12px;
+    }
+
+    .scrollbar-outer>.scroll-content.scroll-scrollx_visible {
+      top: -12px;
+      margin-top: 12px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-x .scroll-bar {
+      min-width: 10px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-y .scroll-bar {
+      min-height: 10px;
+    }
+
+    /* update scrollbar offset if both scrolls are visible */
+    .scrollbar-outer>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+      left: -14px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+      top: -14px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+      left: -14px;
+    }
+
+    .scrollbar-outer>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+      top: -14px;
+    }
+
+    /*************** SCROLLBAR MAC OS X ***************/
+    .scrollbar-macosx>.scroll-element,
+    .scrollbar-macosx>.scroll-element div {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .scrollbar-macosx>.scroll-element div {
+      display: block;
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .scrollbar-macosx>.scroll-element .scroll-element_track {
+      display: none;
+    }
+
+    .scrollbar-macosx>.scroll-element .scroll-bar {
+      background-color: #6C6E71;
+      display: block;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      border-radius: 7px;
+      -webkit-transition: opacity 0.2s linear;
+      -moz-transition: opacity 0.2s linear;
+      -o-transition: opacity 0.2s linear;
+      -ms-transition: opacity 0.2s linear;
+      transition: opacity 0.2s linear;
+    }
+
+    .scrollbar-macosx:hover>.scroll-element .scroll-bar,
+    .scrollbar-macosx>.scroll-element.scroll-draggable .scroll-bar {
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+      filter: alpha(opacity=70);
+      opacity: 0.7;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-x {
+      bottom: 0px;
+      height: 0px;
+      left: 0;
+      min-width: 100%;
+      overflow: visible;
+      width: 100%;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-y {
+      height: 100%;
+      min-height: 100%;
+      right: 0px;
+      top: 0;
+      width: 0px;
+    }
+
+    /* scrollbar height/width & offset from container borders */
+    .scrollbar-macosx>.scroll-element.scroll-x .scroll-bar {
+      height: 7px;
+      min-width: 10px;
+      top: -9px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-y .scroll-bar {
+      left: -9px;
+      min-height: 10px;
+      width: 7px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-x .scroll-element_outer {
+      left: 2px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-x .scroll-element_size {
+      left: -4px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-y .scroll-element_outer {
+      top: 2px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-y .scroll-element_size {
+      top: -4px;
+    }
+
+    /* update scrollbar offset if both scrolls are visible */
+    .scrollbar-macosx>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+      left: -11px;
+    }
+
+    .scrollbar-macosx>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+      top: -11px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>title for spacing title for spacing title for spacing title for spacing1</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing2</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing3</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing4</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing5</h1>
+    <h1>title for spacing title for spacing title for spacing title for spacing6</h1>
+    <div>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+      <p>
+        Bacon ipsum dolor amet chicken burgdoggen picanha fatback short ribs cow pork beef pork chop landjaeger pig boudin flank sirloin. Buffalo turkey fatback spare ribs boudin tongue turducken tri-tip. Pancetta tail corned beef, fatback leberkas spare ribs ground round buffalo rump shankle frankfurter beef filet mignon. Capicola bresaola pancetta, alcatra pig strip steak hamburger jowl ham hock. Jowl alcatra ham hock beef cow ribeye shankle doner capicola.
+      </p>
+    </div>
+  </div>
+
+  <div class="button-controls">
+    <button class="btn btn-primary open-nav">toggle nav</button>
+  </div>
+
+  <div class="nav-outer">
+    <div class="nav-wrapper">
+      <div class="nav-header">
+        <div class="pull-left menu-back-control">
+          menu</div>
+        <div class="pull-right close-nav-completely">X
+        </div>
+      </div>
+
+      <!-- BEGIN FIRST LEVEL NAV SECTIONS -->
+      <div class="bottom menu-container">
+        <div class="scrollbar-macosx">
+          <h1>Home</h1>
+          <h1 class="has-children">Information<span> -></span></h1>
+          <h1 class="has-children">Food &amp; Beverage<span> -></span></h1>
+        </div>
+      </div>
+      <!-- END FIRST LEVEL NAV SECTIONS -->
+
+      <!-- BEGIN SECOND LEVEL NAV SECTIONS -->
+      <div class="middle menu-container">
+        <div class="scrollbar-macosx">
+          <h5>Information</h5>
+          <h1>bell services</h1>
+          <h1 class="has-children">corp social responsibility<span> -></span></h1>
+          <h1 class="has-children">fax numbers<span> -></span></h1>
+        </div>
+      </div>
+      <div class="middle menu-container">
+        <div class="scrollbar-macosx">
+          <h5>Food &amp; Beverage</h5>
+          <h1>food 1</h1>
+          <h1 class="has-children">food 2<span> -></span></h1>
+          <h1 class="has-children">food 3<span> -></span></h1>
+        </div>
+      </div>
+      <!-- END SECOND LEVEL NAV SECTIONS -->
+
+      <!-- BEGIN THIRD LEVEL NAV SECTIONS -->
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>corp social responsibility</h5>
+          <h1>corp 1</h1>
+          <h1>corp 2</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>fax numbers</h5>
+          <h1>fax 1</h1>
+          <h1>fax 2</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>food 2</h5>
+          <h1>food 2a</h1>
+          <h1>food 2b</h1>
+        </div>
+      </div>
+      <div class="top menu-container">
+        <div class="scrollbar-macosx">
+          <h5>food 3</h5>
+          <h1>food 3aa</h1>
+          <h1>food 3bb</h1>
+        </div>
+      </div>
+      <!-- END THIRD LEVEL NAV SECTIONS -->
+
+    </div>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script src="https://uikits.cendyn.com/Areas/v002/Plugins/scrollbar/js/scrollbar.min.js"></script>
+
+  <script>
+    (function() {
+      $(".open-nav").on("click", function() {
+        $("body").toggleClass("open-the-nav");
+      });
+
+      $(".has-children").on("click", function() {
+        var $that = $(this);
+        var textArr = ($(this).text().split("-"));
+        var textOnly = textArr[0].trim();
+
+        setTimeout(function() {
+          $that.parents(".scrollbar-macosx").scrollTop(0);
+        }, 500);
+
+        $("h5:contains('" + textOnly + "')").parents(".menu-container").addClass("open");
+      });
+
+      $(".menu-back-control").on("click", function() {
+        // check top, then middle, then if none close nav
+        if ($(".top").hasClass("open")) {
+          $(".top").removeClass("open");
+        } else if ($(".middle").hasClass("open")) {
+          $(".middle").removeClass("open");
+        } else {
+          $("body").removeClass("open-the-nav");
+        }
+      });
+
+      $(".close-nav-completely").on("click", function() {
+        $("body").removeClass("open-the-nav");
+        $(".menu-container").removeClass("open");
+      });
+
+      $('.scrollbar-macosx').scrollbar();
+    }());
+
+  </script>
+
+</body>
+
+</html>
