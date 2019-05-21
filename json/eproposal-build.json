@@ -1,0 +1,48 @@
+{
+  "resources": [{
+      "type": "javascript",
+      "path": "https://domain.com/1.js",
+      "sortOrder": "1",
+      "location": "header"
+    },
+    {
+      "type": "javascript",
+      "path": "https://domain.com/3.js",
+      "sortOrder": "1",
+      "location": "footer"
+    }
+  ],
+  "configuration": [{
+    "id": "UNIQUE-11",
+    "name": "configuration 1",
+    "path": "https://data.cendyn.com/[template1]/configs/[config1]/config.css.min"
+  }],
+  "theme": [{
+    "id": "UNIQUE-22",
+    "name": "theme 2",
+    "path": "https://data.cendyn.com/[template1]/configs/[config1]/config.css.min"
+  }],
+  "layout": [{
+    "id": "Layout",
+    "HtmlSet": "[Header]    [MAINNAV]",
+    "Children": [{
+        "id": "Header",
+        "htmlSet": "<header> [subnav] </header>",
+        "Children": [{
+          "id": "subnav",
+          "htmlset": "<nav class='sub'>",
+          "Children": [
+
+          ]
+        }]
+      },
+      {
+        "id": "Mainnav",
+        "htmlSet": "<nav>Navigation</nav>",
+        "Children": [
+
+        ]
+      }
+    ]
+  }]
+}
