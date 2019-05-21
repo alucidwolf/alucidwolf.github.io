@@ -24,7 +24,7 @@
   }],
   "layout": [{
     "id": "Layout",
-    "HtmlSet": "[Header]    [MAINNAV]",
+    "HtmlSet": "<div class='container-fluid'><div class='proposal-wrapper'>  <header class='proposal-header'>[HEADER]</header>  <div class='proposal-wrapper--inner'><div class='proposal-flex-container--nav'>[MAIN_NAV]</div><div class='proposal-flex-container--slider'>[SLIDER]</div><div class='proposal-flex-container--subnav'>[SUB_NAV]</div><div class='proposal-wrapper--inner-child--wrapper'>  <div class='proposal-flex-container--main-content'>[CONTENT]</div></div>  </div></div><footer class='proposal-footer'>  <div class='proposal-flex-container--footer'>[FOOTER]</div></footer></div>",
     "Children": [{
         "id": "Header",
         "htmlSet": "<header> [subnav] </header>",
