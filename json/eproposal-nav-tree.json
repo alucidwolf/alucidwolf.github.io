@@ -1,37 +1,36 @@
-[
-        {
-          id: 1,
-          name: "Your Proposal",
-          route: "/"
-        },
-        {
-          id: 2,
-          name: "Info Sheet",
-          route: "/about"
-        },
-        {
-          id: 3,
-          name: "Dynamic View nav1 details",
-          route: "/dynamicview/reg/details"
-        },
-        {
-          id: 4,
-          name: "Dynamic View nav1 detail sales(sub page)",
-          route: "/dynamicview/reg/details/sales"
-        },
-        {
-          id: 5,
-          name: "Dynamic View nav1 capacity charts",
-          route: "/dynamicview/func/capacitychart"
-        },
-        {
-          id: 6,
-          name: "Dynamic View nav1 incorrect page type",
-          route: "/dynamicview/asd/capacitychart"
-        },
-        {
-          id: 7,
-          name: "Dynamic View nav1 only correct page type",
-          route: "/dynamicview/reg"
-        }
-      ]
+[{
+		"id": 1,
+		"name": "Your Proposal",
+		"route": "/"
+	},
+	{
+		"id": 2,
+		"name": "Info Sheet",
+		"route": "/about"
+	},
+	{
+		"id": 3,
+		"name": "Dynamic View nav1 details",
+		"route": "/dynamicview/reg/details"
+	},
+	{
+		"id": 4,
+		"name": "Dynamic View nav1 detail sales(sub page)",
+		"route": "/dynamicview/reg/details/sales"
+	},
+	{
+		"id": 5,
+		"name": "Dynamic View nav1 capacity charts",
+		"route": "/dynamicview/func/capacitychart"
+	},
+	{
+		"id": 6,
+		"name": "Dynamic View nav1 incorrect page type",
+		"route": "/dynamicview/asd/capacitychart"
+	},
+	{
+		"id": 7,
+		"name": "Dynamic View nav1 only correct page type",
+		"route": "/dynamicview/reg"
+	}
+]
