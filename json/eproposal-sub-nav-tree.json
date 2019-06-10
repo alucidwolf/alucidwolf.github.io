@@ -1,0 +1,28 @@
+[
+  {
+    "parentNavId": 3,
+    "routes": [
+      {
+        "name": "details sales",
+        "route": "/dynamicview/reg/details/sales"
+      },
+      {
+        "name": "details operations",
+        "route": "/dynamicview/reg/details/operations"
+      }
+    ]
+  },
+  {
+    "parentNavId": 2,
+    "routes": [
+      {
+        "name": "details sales",
+        "route": "/dynamicview/reg/about/recreation"
+      },
+      {
+        "name": "details operations",
+        "route": "/dynamicview/reg/about/accommodations"
+      }
+    ]
+  }
+]
