@@ -10,6 +10,11 @@
         "id": 2,
         "name": "details operations",
         "route": "/dynamicview/reg/details/operations"
+      },
+      {
+        "id": 3,
+        "name": "photo tour",
+        "route": "/dynamicview/reg/details/operations/phototour"
       }
     ]
   },
