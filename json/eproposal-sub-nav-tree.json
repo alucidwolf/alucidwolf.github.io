@@ -2,10 +2,12 @@
   {
     "details": [
       {
+        "id": 1,
         "name": "details sales",
         "route": "/dynamicview/reg/details/sales"
       },
       {
+        "id": 2,
         "name": "details operations",
         "route": "/dynamicview/reg/details/operations"
       }
@@ -14,10 +16,12 @@
   {
     "about": [
       {
+        "id": 1,
         "name": "details sales",
         "route": "/dynamicview/reg/about/recreation"
       },
       {
+        "id": 2,
         "name": "details operations",
         "route": "/dynamicview/reg/about/accommodations"
       }
